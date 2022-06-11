@@ -1,6 +1,6 @@
+DROP TABLE if EXISTS care;
 DROP TABLE IF EXISTS plants;
 DROP Table if EXISTS users;
-DROP TABLE if EXISTS care;
 
 create table users (
     id serial PRIMARY KEY ,
@@ -9,7 +9,7 @@ create table users (
     email text UNIQUE,
     password_hash VARCHAR(255)
    
-)
+);
 
 create table plants (
     id serial PRIMARY KEY,
@@ -18,10 +18,10 @@ create table plants (
     description VARCHAR(255),
     user_id integer REFERENCES users(id)
     
-)
+);
 create table care (
-    plant_id reference,
-    care_id serial PRIMARY KEY
+    plant_id integer REFERENCES plants(id),
+    care_id serial PRIMARY KEY,
     water text,
     humidity text,
     soil text,
