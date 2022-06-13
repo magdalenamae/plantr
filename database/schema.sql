@@ -28,5 +28,5 @@ create table care (
     light text,
     FOREIGN KEY(plant_id) 
 		REFERENCES plants(id)
-)
+);
  
