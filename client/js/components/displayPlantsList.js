@@ -9,6 +9,7 @@ function displayPlantsList(){
     const userid = 2
     section.replaceChildren(loadingTag)
     const heading = document.createElement("h1")
+    heading.classList.add('header-h1')
     heading.textContent ="Green House"
     axios
         .get(`/api/plants/${userid}`)
@@ -34,7 +35,7 @@ function displayPlant(plant,userid){
     linkViewMore.classList
     linkViewMore.textContent ="View more"
     linkViewMore.href = 'javascript:void(0)'
-    divEl.append(name,description,image,linkViewMore)
+    divEl.append(image,name,description,linkViewMore)
     linkViewMore.addEventListener('click',showPlantsDetails)
     return divEl
 }
