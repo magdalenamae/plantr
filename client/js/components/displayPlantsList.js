@@ -8,7 +8,8 @@ function displayPlantsList() {
   const heading = document.createElement("h1");
   heading.classList.add("header-h1");
   heading.textContent = "Green House";
-  axios.get(`/api/plants/${userid}`).then((response) => {
+
+  axios.get(`/api/greenHouse/${userid}`).then((response) => {
     console.log(response.data);
     const listElements = response.data.map((plant) => displayPlant(plant, userid));
     console.log(listElements);

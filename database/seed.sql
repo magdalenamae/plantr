@@ -11,6 +11,7 @@ INSERT INTO plants(name, image, description) VALUES ('Aglaonema stripes', 'https
 
 -- GREENHOUSE
 INSERT INTO greenhouse (name, plant_id, user_id) VALUES ('Allan', 5, 2);
+INSERT INTO greenhouse (name, plant_id, user_id) VALUES ('Allan', 3, 2);
 
 -- CARE: water:low-moderate, humidity : high , Light: bright indirect, soil: well-draining
 INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (1, 'moderate','medium','well-draining', 'bright indirect');
