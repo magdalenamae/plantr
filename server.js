@@ -5,15 +5,20 @@ const db = require("./database/db.js");
 const expressSession = require("express-session");
 const pgSession = require("connect-pg-simple")(expressSession);
 
-//controllers
-const plantsControllers = require("./controllers/plants.js"); //swap with greenhouse in PR
-const sessionController = require("./controllers/session");
-const signupController = require("./controllers/signup");
 
-const app = express();
+//const userController = require('./controllers/users.js')
+const greenHouseControllers = require('./controllers/greenHouse.js')
+const sessionController = require("./controllers/session");
+const plantsController = require("./controllers/plants")
+const signupController = require("./controllers/signup");
+const app = express()
 const port = 3000;
-app.use(express.static("client"));
-app.use(express.json());
+app.use(express.static('client'))
+app.use(express.json())
+
+
+
+
 
 //code for create session
 app.use(
@@ -33,9 +38,14 @@ app.use((req, res, next) => {
 });
 
 //plants API
-app.use("/api/plants", plantsControllers); //swap with greenhouse in PR
+
+app.use('/api/greenHouse',greenHouseControllers)
 app.use("/api/session", sessionController);
+app.use('/api/plants',plantsController)
 app.use("/api/users", signupController);
+
+
+
 
 //handle any error that wasn't handled
 app.use((err, req, res, next) => {

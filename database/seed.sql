@@ -1,6 +1,7 @@
 -- USERS
 INSERT INTO users (name, email, password_hash) VALUES ('sally', 'sally@example.com', 'sally');
 INSERT INTO users (name, email, password_hash) VALUES ('sam', 'sam@example.com', 'sam');
+INSERT INTO users (name, email, password_hash) VALUES ('Allan', 'allan@example.com', 'allan');
 
 -- PLANTS
 INSERT INTO plants (name, image, description) VALUES ('Monstera deliciosa', 'https://images.pexels.com/photos/2090641/pexels-photo-2090641.jpeg', 'an indoor plant needing a lot of space and jailing from parts of southern Mexico.');
@@ -10,7 +11,8 @@ INSERT INTO plants(name, image, description) VALUES ('Begonia mazae', 'https://q
 INSERT INTO plants(name, image, description) VALUES ('Aglaonema stripes', 'https://i.etsystatic.com/10494852/r/il/88a04a/3093502645/il_300x300.3093502645_2v0r.jpg', 'Beautiful and easy to care for, with dark green leaves and white stripes.');
 
 -- GREENHOUSE
-INSERT INTO greenhouse (name, plant_id, user_id) VALUES ('Allan', 5, 2);
+INSERT INTO greenhouse (name, plant_id, user_id) VALUES ('Allan', 5, 3);
+INSERT INTO greenhouse (name, plant_id, user_id) VALUES ('Allan', 3, 3);
 
 -- CARE: water:low-moderate, humidity : high , Light: bright indirect, soil: well-draining
 INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (1, 'moderate','medium','well-draining', 'bright indirect');
