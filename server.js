@@ -10,6 +10,7 @@ const pgSession = require("connect-pg-simple")(expressSession);
 //const userController = require('./controllers/users.js')
 const greenHouseControllers = require('./controllers/greenHouse.js')
 const sessionController = require("./controllers/session");
+const plantsController = require("./controllers/plants")
 const app = express()
 const port = 3000;
 app.use(express.static('client'))
@@ -38,6 +39,7 @@ app.use((req, res, next) => {
 //plants API
 app.use('/api/greenHouse',greenHouseControllers)
 app.use("/api/session", sessionController);
+app.use('/api/plants',plantsController)
 //handle any error that wasn't handled
 
 app.use((err,req,res,next)=>{

@@ -37,7 +37,12 @@ router.get('/:id',(req,res)=>{
         res.status(400).json({success:false, message: error})
     })
 })
-
+router.post('/',(req,res)=>{
+    const reqDtata= req.body
+   
+    console.log(reqDtata,"reqDtata")
+    
+})
 
 
   module.exports = router

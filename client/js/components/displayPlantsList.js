@@ -11,6 +11,7 @@ function displayPlantsList() {
 
   axios.get(`/api/greenHouse/${userid}`).then((response) => {
     console.log(response.data);
+    
     const listElements = response.data.map((plant) => displayPlant(plant, userid));
     console.log(listElements);
     section.replaceChildren(heading, ...listElements);
