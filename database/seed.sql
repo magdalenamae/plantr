@@ -2,6 +2,7 @@
 INSERT INTO users (name, email, password_hash) VALUES ('sally', 'sally@example.com', 'sally');
 INSERT INTO users (name, email, password_hash) VALUES ('sam', 'sam@example.com', 'sam');
 INSERT INTO users (name, email, password_hash) VALUES ('Allan', 'allan@example.com', 'allan');
+
 -- PLANTS
 INSERT INTO plants(name, image, description) VALUES ('Monstera deliciosa', 'https://images.pexels.com/photos/2090641/pexels-photo-2090641.jpeg', 'an indoor plant needing a lot of space and jailing from parts of southern Mexico.');
 INSERT INTO plants(name, image, description) VALUES ('Hoya Kerrii', 'https://media.istockphoto.com/photos/colorful-flowers-sweetheart-hoya-leaf-pot-ornamental-plant-or-hoya-picture-id1127518168?b=1&k=20&m=1127518168&s=612x612&w=0&h=G3yV3LrOCud09d22b9uArbLKMW4r0EC_HeyzFsN5M74=', 'a heart shapped leaf plant from southeast Asia');
@@ -26,7 +27,9 @@ INSERT INTO plants(name, image, description) VALUES ('Oxalis triangularis', '/cl
 INSERT INTO plants(name, image, description) VALUES ('Cereus Repandus', '/client/images/Cereus.png', 'Cereus  repandus is commonly known by the names Peruvian Apple Cactus and Queen Of The Night, amongst others. This succulent plant is a large, columnar, thorny cactus, with cylindrical grey-green to blue stems that can grow up to 10m in height. The showy, white, nocturnal flowers remain open for only one night.');
 
 -- GREENHOUSE
+
 INSERT INTO greenhouse (name, plant_id, user_id) VALUES ('Allan', 5, 2);
+
 INSERT INTO greenhouse (name, plant_id, user_id) VALUES ('Allan', 5, 3);
 INSERT INTO greenhouse (name, plant_id, user_id) VALUES ('Allan', 3, 3);
 
