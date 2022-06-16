@@ -4,14 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/styles.css" />
+    <title>PLNTR</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- additional js files -->
-    <script defer src="js/initialise.js"></script>
+    <script defer src="js/components/landing-page/renderLanding.js"></script>
+    <script defer src="js/components/landing-page/login.js"></script>
+    <script defer src="js/components/landing-page/userSignup.js"></script>
+    <script defer src="js/index.js"></script>
   </head>
   <body>
-    <header id="header"></header>
-    <section id="section"></section>
+    <header id="header">
+      <h3 id="logo">PLNTR</h3>
+    </header>
+    <section id="landing"></section>
+    <p id="errors"></p>
   </body>
 </html>
