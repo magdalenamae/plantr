@@ -14,7 +14,7 @@ create table plants (
     id serial PRIMARY KEY,
     name VARCHAR(255),
     image VARCHAR(255),
-    description VARCHAR(255) 
+    description TEXT 
 );
 
 create table greenhouse (
