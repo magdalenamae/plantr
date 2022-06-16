@@ -29,7 +29,6 @@ INSERT INTO plants(name, image, description) VALUES ('Cereus Repandus', './image
 -- GREENHOUSE
 
 INSERT INTO greenhouse (name, plant_id, user_id) VALUES ('Allan', 5, 2);
-
 INSERT INTO greenhouse (name, plant_id, user_id) VALUES ('Allan', 5, 3);
 INSERT INTO greenhouse (name, plant_id, user_id) VALUES ('Allan', 3, 3);
 
