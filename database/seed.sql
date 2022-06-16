@@ -1,7 +1,7 @@
 -- USERS
 INSERT INTO users (name, email, password_hash) VALUES ('sally', 'sally@example.com', 'sally');
 INSERT INTO users (name, email, password_hash) VALUES ('sam', 'sam@example.com', 'sam');
-
+INSERT INTO users (name, email, password_hash) VALUES ('Allan', 'allan@example.com', 'allan');
 -- PLANTS
 INSERT INTO plants(name, image, description) VALUES ('Monstera deliciosa', 'https://images.pexels.com/photos/2090641/pexels-photo-2090641.jpeg', 'an indoor plant needing a lot of space and jailing from parts of southern Mexico.');
 INSERT INTO plants(name, image, description) VALUES ('Hoya Kerrii', 'https://media.istockphoto.com/photos/colorful-flowers-sweetheart-hoya-leaf-pot-ornamental-plant-or-hoya-picture-id1127518168?b=1&k=20&m=1127518168&s=612x612&w=0&h=G3yV3LrOCud09d22b9uArbLKMW4r0EC_HeyzFsN5M74=', 'a heart shapped leaf plant from southeast Asia');
@@ -27,26 +27,28 @@ INSERT INTO plants(name, image, description) VALUES ('Cereus Repandus', '/client
 
 -- GREENHOUSE
 INSERT INTO greenhouse (name, plant_id, user_id) VALUES ('Allan', 5, 2);
+INSERT INTO greenhouse (name, plant_id, user_id) VALUES ('Allan', 5, 3);
+INSERT INTO greenhouse (name, plant_id, user_id) VALUES ('Allan', 3, 3);
 
 -- CARE: water:low-moderate, humidity : high , Light: bright indirect, soil: well-draining
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (1, 'moderate','medium','well-draining', 'bright indirect');
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (2, 'moderate','high','well-draining', 'bright indirect');
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (3, 'moderate', 'low', 'well-draining', 'bright indirect' );
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (4, 'moderate', 'medium-high', 'well-draining', 'bright indirect' );
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (5, 'moderate', 'medium', 'well-draining', 'low-moderate' );
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (6, 'moderate', 'medium-high', 'well-draining', 'bright indirect' );
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (7, 'moderate', 'medium', 'well-draining', 'bright indirect' );
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (8, 'moderate', 'medium', 'well-draining', 'bright indirect' );
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (9, 'moderate', 'low', 'well-draining', 'bright indirect' );
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (10, 'moderate', 'medium', 'well-draining', 'bright indirect' );
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (11, 'moderate', 'high','moisture retaining', 'bright indirect');
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (12, 'high', 'high', 'well-draining', 'bright indirect');
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (13, 'moderate', 'medium', 'well-draining', 'low-moderate');
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (14, 'moderate-high', 'medium', 'well-draining',);
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (15, 'moderate', 'medium', 'well-draining', 'bright indirect');
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (16, 'low-moderate', 'medium', 'well-draining', 'bright indirect');
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (17, 'low-moderate', 'medium', 'well-draining', 'bright indirect');
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (18, 'low-moderate', 'medium', 'well-draining', 'low-moderate');
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (19, 'low', 'low', 'coare + sandy', 'bright indirect');
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (20, 'moderate-high', 'medium', 'well-draining', 'bright indirect');
-INSERT INTO care (plant_id, water, humidity, soil, light) VALUES (21, 'low-moderate', 'none', 'coarse + sandy', 'full sun');
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('moderate','medium','well-draining', 'bright indirect');
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('moderate','high','well-draining', 'bright indirect');
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('moderate', 'low', 'well-draining', 'bright indirect' );
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('moderate', 'medium-high', 'well-draining', 'bright indirect' );
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('moderate', 'medium', 'well-draining', 'low-moderate' );
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('moderate', 'medium-high', 'well-draining', 'bright indirect' );
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('moderate', 'medium', 'well-draining', 'bright indirect' );
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('moderate', 'medium', 'well-draining', 'bright indirect' );
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('moderate', 'low', 'well-draining', 'bright indirect' );
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('moderate', 'medium', 'well-draining', 'bright indirect' );
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('moderate', 'high','moisture retaining', 'bright indirect');
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('high', 'high', 'well-draining', 'bright indirect');
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('moderate', 'medium', 'well-draining', 'low-moderate');
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('moderate-high', 'medium', 'well-draining',);
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('moderate', 'medium', 'well-draining', 'bright indirect');
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('low-moderate', 'medium', 'well-draining', 'bright indirect');
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('low-moderate', 'medium', 'well-draining', 'bright indirect');
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('low-moderate', 'medium', 'well-draining', 'low-moderate');
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('low', 'low', 'coare + sandy', 'bright indirect');
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('moderate-high', 'medium', 'well-draining', 'bright indirect');
+INSERT INTO care (plant_id, water, humidity, soil, light) VALUES ('low-moderate', 'none', 'coarse + sandy', 'full sun');
