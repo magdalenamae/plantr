@@ -39,6 +39,7 @@ router.get('/:id',(req,res)=>{
 })
 router.post('/',(req,res)=>{
     const reqDtata= req.body
+    const sql ='INSERT into greenhouse'
    
     console.log(reqDtata,"reqDtata")
     

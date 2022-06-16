@@ -1,7 +1,7 @@
-DROP TABLE if EXISTS care;
-DROP TABLE IF EXISTS plants;
-DROP Table if EXISTS users;
-DROP Table if EXISTS greenhouse;
+DROP TABLE if EXISTS care Cascade;
+DROP TABLE IF EXISTS plants Cascade;
+DROP Table if EXISTS users Cascade;
+DROP Table if EXISTS greenhouse Cascade;
 
 create table users (
     id serial PRIMARY KEY,
@@ -14,7 +14,7 @@ create table plants (
     id serial PRIMARY KEY,
     name VARCHAR(255),
     image VARCHAR(255),
-    description VARCHAR(255) 
+    description text 
 );
 
 create table greenhouse (
