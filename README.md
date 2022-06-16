@@ -1,2 +1,2 @@
-# plantr
+# plntr
 Plant Habbit Tracker
