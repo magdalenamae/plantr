@@ -1,4 +1,5 @@
 console.log("header running");
+
 function renderHeader() {
   //view greenhouse
   const buttonGetPlants = document.getElementById("get-plants");
@@ -9,9 +10,15 @@ function renderHeader() {
   const addPlant = document.getElementById("add-plants");
   console.log("added plants");
   addPlant.addEventListener("click", (event) => {
-  console.log("success");
-  addNewPlant();
+    console.log("success");
+    addNewPlant();
   });
 
+  accountInfo();
+
   //logout function to be added
+  const logsOut = document.getElementById("logout");
+  logsOut.addEventListener("click", (event) => {
+    logout();
+  });
 }
