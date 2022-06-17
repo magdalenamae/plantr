@@ -21,7 +21,6 @@ router.post("/", (req, res) => {
     }
 
     if (user && isValidPassword(password, user.password_hash)) {
-      // if (user && user.password_hash) {
       req.session.userId = user.id;
       req.session.name = user.name;
       req.session.email = user.email;
