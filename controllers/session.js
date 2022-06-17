@@ -10,18 +10,18 @@ router.post("/", (req, res) => {
   const sql = `SELECT * FROM users WHERE email = $1`;
   db.query(sql, [email]).then((dbRes) => {
     const user = dbRes.rows[0];
-    // const bcrypt = require("bcrypt");
+    const bcrypt = require("bcrypt");
 
-    // const generateHash = (password) => {
-    //   return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null);
-    // };
+    const generateHash = (password) => {
+      return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null);
+    };
 
-    // function isValidPassword(plainTextPassword, passwordHash) {
-    //   return bcrypt.compareSync(plainTextPassword, passwordHash);
-    // }
+    function isValidPassword(plainTextPassword, passwordHash) {
+      return bcrypt.compareSync(plainTextPassword, passwordHash);
+    }
 
-    // if (user && isValidPassword(password, user.password_hash)) {
-    if (user && user.password_hash) {
+    if (user && isValidPassword(password, user.password_hash)) {
+      // if (user && user.password_hash) {
       req.session.userId = user.id;
       req.session.name = user.name;
       req.session.email = user.email;
