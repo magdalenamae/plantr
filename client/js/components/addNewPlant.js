@@ -20,21 +20,18 @@ function addNewPlant() {
     <input type="text" name="name" id ='search-inp'>
     <button id ="add-pl-submit-btn" >Search</button>
     `
-    const showPlant = document.createElement("div")
-    showPlant.classList.add ("show-plants")
-    section.appendChild(showPlant)
-
-    section.replaceChildren(formEl,showPlant)
+    
+    section.replaceChildren(formEl)
     const searchButton=document.getElementById('add-pl-submit-btn')
     formEl.addEventListener('submit',(event)=>{
         event.preventDefault()
         const inputSearch = document.getElementById("search-inp")
         const searchedPlant = inputSearch.value
-        // const showPlant = document.createElement("div")
-        // showPlant.classList.add ("show-plants")
-        // section.appendChild(showPlant)
+        const showPlant = document.createElement("div")
+        showPlant.classList.add ("show-plants")
+        section.appendChild(showPlant)
 
-       
+        showPlant.innerHTML =""
         
         axios
             .get(`/api/plants/${searchedPlant}`)
@@ -86,7 +83,7 @@ function addPlantsToGreenhhouse(){
         // .then((response)=>{
         //     console.log(response)
         // })
-    
+
 
     const plant_idArray = []
     const data = {

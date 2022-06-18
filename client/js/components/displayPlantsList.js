@@ -5,7 +5,7 @@ function displayPlantsList() {
   const loadingTag = document.createElement("p");
   loadingTag.textContent = "loading";
   //
-  const userid = 3;
+  const userid = 2;
   section.replaceChildren(loadingTag);
   //
   const heading = document.createElement("h1");
@@ -46,14 +46,14 @@ function displayPlant(plant, userid) {
   return divEl;
 }
 
-//  function showPlantCareDetails(){
-//   let showCareDetails = document.createElement("linkViewMore");
-//   console.log('hello world, this is the showPlantCareDetails function');
-//   showCareDetails.addEventListener("click", (event) => {
-//     // axios event to get care details that match the plant id 
-//     // render the care details with the plant name and description and image 
-//     //add catch details to the axios event
-//   });
-//  }
+ function showPlantCareDetails(){
+  let showCareDetails = document.createElement("linkViewMore");
+  console.log('hello world, this is the showPlantCareDetails function');
+  showCareDetails.addEventListener("click", (event) => {
+    // axios event to get care details that match the plant id 
+    // render the care details with the plant name and description and image 
+    //add catch details to the axios event
+  });
+ }
 
-//  plantcareDetails()
+ plantcareDetails()
