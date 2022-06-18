@@ -98,7 +98,7 @@ function dataArray(username,userid,plantid){
 
 
 
-  console.log(reqDtata, "reqDtata");
-});
+//   console.log(reqDtata, "reqDtata");
+// });
 
 module.exports = router;
