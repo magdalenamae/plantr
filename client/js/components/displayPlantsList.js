@@ -14,7 +14,7 @@ function displayPlantsList() {
 
   axios.get(`/api/greenHouse/${userid}`).then((response) => {
     console.log(response.data);
-    
+
     const listElements = response.data.map((plant) => displayPlant(plant, userid));
     console.log(listElements);
     section.replaceChildren(heading, ...listElements);
@@ -26,7 +26,7 @@ function displayPlant(plant, userid) {
   console.log(divEl);
   divEl.classList.add("plant");
   divEl.setAttribute("id", plant.id);
-  // 
+  //
   const name = document.createElement("h2");
   name.textContent = plant.name;
   //
@@ -41,19 +41,24 @@ function displayPlant(plant, userid) {
   linkViewMore.textContent = "See more";
   linkViewMore.href = "javascript:void(0)";
   //
-  divEl.append(image, name, description, linkViewMore);
+  const deletePlant = document.createElement("a");
+  deletePlant.classList.add("delete-plant");
+  deletePlant.textContent = "delete";
+  deletePlant.href = "javascript:void(0)";
+  //
+  divEl.append(image, name, description, linkViewMore, deletePlant);
   linkViewMore.addEventListener("click", showPlantsDetails);
   return divEl;
 }
 
- function showPlantCareDetails(){
+function showPlantCareDetails() {
   let showCareDetails = document.createElement("linkViewMore");
-  console.log('hello world, this is the showPlantCareDetails function');
+  console.log("hello world, this is the showPlantCareDetails function");
   showCareDetails.addEventListener("click", (event) => {
-    // axios event to get care details that match the plant id 
-    // render the care details with the plant name and description and image 
+    // axios event to get care details that match the plant id
+    // render the care details with the plant name and description and image
     //add catch details to the axios event
   });
- }
+}
 
- plantcareDetails()
+plantcareDetails();
