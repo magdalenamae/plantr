@@ -6,21 +6,18 @@ function accountInfo() {
     .get("/api/session")
     .then((response) => {
       console.log(response.data);
-      const { name } = response.data;
-      const userGreeting = document.createElement("p");
-      userGreeting.setAttribute("id", "logininfo");
-      navBar.appendChild(userGreeting);
-      const loginInfo = document.getElementById("logininfo");
-      loginInfo.textContent = `Logged in as ${name} `;
+      const { userName } = response.data.name;
+      console.log(userName);
+      const userGreeting = document.getElementById("logininfo");
+      userGreeting.textContent = `Logged in as ${userName} `;
     })
     .catch((err) => {
       if (err.response.status === 401) {
-        console.log("not logged in");
         const loginInfo = document.getElementById("logininfo");
         loginInfo.textContent = ``;
         const loginLink = document.createElement("a");
-        loginLink.href = "/login.html";
-        loginLink.textContent = "login";
+        loginLink.href = "/";
+        loginLink.textContent = "Login or create an account to view your Greenhouse";
         loginInfo.appendChild(loginLink);
         return;
       }
