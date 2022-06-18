@@ -1,3 +1,7 @@
+// const { default: axios } = require("axios");
+
+// const res = require("express/lib/response");
+
 function displayPlantsList() {
   const section = document.getElementById("plants-details");
   console.log("in display plants");
@@ -5,13 +9,24 @@ function displayPlantsList() {
   const loadingTag = document.createElement("p");
   loadingTag.textContent = "loading";
   //
-  const userid = 4;
+  // const userid = 4;
   section.replaceChildren(loadingTag);
   //
   const heading = document.createElement("h1");
   heading.classList.add("header-h1");
   heading.textContent = "Green House";
+  
+//api session
 
+
+axios.get(`/api/session`)
+  .then((response)=>{
+  console.log("in session")
+    console.log(response.data.id,"session")
+     let userid = response.data.id
+     console.log(userid)
+  
+// console.log(sessionUserid,"sessionUserid,")
   axios.get(`/api/greenHouse/${userid}`).then((response) => {
     console.log(response.data);
     
@@ -19,6 +34,7 @@ function displayPlantsList() {
     console.log(listElements);
     section.replaceChildren(heading, ...listElements);
   });
+})
 }
 
 function displayPlant(plant, userid) {

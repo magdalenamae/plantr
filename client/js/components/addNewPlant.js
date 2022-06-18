@@ -30,8 +30,10 @@ function addNewPlant() {
         const showPlant = document.createElement("div")
         showPlant.classList.add ("show-plants")
         section.appendChild(showPlant)
-
-        showPlant.innerHTML =""
+        
+        const articleTag = document.createElement('article')
+        
+        
         
         axios
             .get(`/api/plants/${searchedPlant}`)
