@@ -6,7 +6,7 @@ function accountInfo() {
     .get("/api/session")
     .then((response) => {
       console.log(response.data);
-      const { userName } = response.data.name;
+      const userName = response.data.name;
       console.log(userName);
       const userGreeting = document.getElementById("logininfo");
       userGreeting.textContent = `Logged in as ${userName} `;
