@@ -87,8 +87,8 @@ function addPlantsToGreenhhouse(){
 
     const plant_idArray = []
     const data = {
-        name : "sam",
-        userid: 3,
+        name : "anki",
+        userid: 4,
         plantid:  plant_idArray
     }
     checkedCheckBox.forEach((el)=>{
