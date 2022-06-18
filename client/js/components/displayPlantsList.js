@@ -16,9 +16,25 @@ function displayPlantsList() {
   heading.classList.add("header-h1");
   heading.textContent = "Green House";
   
+
+
+// let Wuserid = getUser()
+// console.log(Wuserid,"Wuserid")
+// async function getUser() { // make function asynchronous
+//   URL = 'http://localhost:3000/api/session'
+//   const results = await axios.get(URL).then(response => { //set await so that when the function is called it knows that a promise is coming
+//   console.log(response.data)
+//   if (response.data.id) { //checks if user is logged in as there are still "sessions" albeit with null info in them when you log out
+//       console.log(response.data.id)
+//       return response.data.id
+//   }
+// })}
+
+
+
+
+
 //api session
-
-
 axios.get(`/api/session`)
   .then((response)=>{
   console.log("in session")
@@ -27,13 +43,22 @@ axios.get(`/api/session`)
      console.log(userid)
   
 // console.log(sessionUserid,"sessionUserid,")
-  axios.get(`/api/greenHouse/${userid}`).then((response) => {
+  axios.get(`/api/greenHouse/${userid}`)
+  .then((response) => {
     console.log(response.data);
     
     const listElements = response.data.map((plant) => displayPlant(plant, userid));
     console.log(listElements);
     section.replaceChildren(heading, ...listElements);
   });
+ 
+  
+})
+.catch((response)=>{
+  console.log(response)
+  if(response.status ===500){
+  console.log("Yor dont have any plants in your Green House. Please add some")
+  }
 })
 }
 
