@@ -14,8 +14,8 @@ router.get("/", (req, res) => {
     res.json(dbResult.rows);
   });
 });
-// get for particular id
-router.get("/session/:id", (req, res) => {
+// get for particular id from greenhouse table to display user plants 
+router.get("/:id", (req, res) => {
   const user_id = req.params.id;
   console.log(user_id, "user_id");
   const sql =
