@@ -18,14 +18,15 @@
   },
   "homepage": "https://github.com/magdalenamae/planta#readme",
   "dependencies": {
-    "nodemon": "^2.0.16",
     "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
     "connect-pg-simple": "^7.0.0",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-session": "^1.17.3",
+    "nodemon": "^2.0.16",
     "package.json": "^2.0.1",
-    "pg": "^8.7.3"
+    "pg": "^8.7.3",
+    "pg-format": "^1.0.4"
   }
 }

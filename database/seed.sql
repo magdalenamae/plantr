@@ -1,7 +1,12 @@
 -- USERS
-INSERT INTO users (name, email, password_hash) VALUES ('sally', 'sally@example.com', 'sally');
-INSERT INTO users (name, email, password_hash) VALUES ('sam', 'sam@example.com', 'sam');
-INSERT INTO users (name, email, password_hash) VALUES ('Allan', 'allan@example.com', 'allan');
+INSERT INTO users (name, email, password_hash) VALUES ('sally', 'sally@example.com', '$2b$10$h61f9JAGx5y7pz9VXbfapO9AZUJoz7EOu01JQ3U.kUhiDL2HJGmUW');
+INSERT INTO users (name, email, password_hash) VALUES ('sam', 'sam@example.com', '$2b$10$h61f9JAGx5y7pz9VXbfapO9AZUJoz7EOu01JQ3U.kUhiDL2HJGmUW');
+INSERT INTO users (name, email, password_hash) VALUES ('Allan', 'allan@example.com', '$2b$10$h61f9JAGx5y7pz9VXbfapO9AZUJoz7EOu01JQ3U.kUhiDL2HJGmUW');
+INSERT INTO users (name, email, password_hash) VALUES ('jane', 'jane@example.com', '$2b$10$XzVfzt6ka8an0jkKiMFll.6RY/p2M3R6M5tI7DF3fZokO5IWiPgUa');
+INSERT INTO users (name, email, password_hash) VALUES ('user', 'test@email.com', '$2b$10$AWQhB4p3Y5rNjdFT8qaJhe9c/FmXJJ6n3zgIDQWQ6E44hMTl8.Xcy');
+INSERT INTO users (name, email, password_hash) VALUES ('tester', 'tester@email.com', '$2b$10$zgHOxKJbk8NxiwYJt.AFpeDHjKVNRjuN8kpQmFQDKym07dag3TS/G');
+INSERT INTO users (name, email, password_hash) VALUES ('placeholder', 'place@holder.com', '$2b$10$h61f9JAGx5y7pz9VXbfapO9AZUJoz7EOu01JQ3U.kUhiDL2HJGmUW');
+-- password is 'password'
 
 -- PLANTS
 INSERT INTO plants(name, image, description) VALUES ('Monstera deliciosa', 'https://images.pexels.com/photos/2090641/pexels-photo-2090641.jpeg', 'an indoor plant needing a lot of space and jailing from parts of southern Mexico.');
@@ -27,7 +32,6 @@ INSERT INTO plants(name, image, description) VALUES ('Oxalis triangularis', './i
 INSERT INTO plants(name, image, description) VALUES ('Cereus Repandus', './images/Cereus.png', 'Cereus  repandus is commonly known by the names Peruvian Apple Cactus and Queen Of The Night, amongst others. This succulent plant is a large, columnar, thorny cactus, with cylindrical grey-green to blue stems that can grow up to 10m in height. The showy, white, nocturnal flowers remain open for only one night.');
 
 -- GREENHOUSE
-
 INSERT INTO greenhouse (name, plant_id, user_id) VALUES ('Allan', 5, 2);
 INSERT INTO greenhouse (name, plant_id, user_id) VALUES ('Allan', 5, 3);
 INSERT INTO greenhouse (name, plant_id, user_id) VALUES ('Allan', 3, 3);
