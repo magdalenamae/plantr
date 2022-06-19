@@ -4,6 +4,8 @@
 function displayPlantsList() {
   const section = document.getElementById("plants-details");
   console.log("in display plants");
+  const div = document.getElementById("care-details");
+  div.innerHTML =''
   //
   const loadingTag = document.createElement("p");
   loadingTag.textContent = "loading";
@@ -88,6 +90,7 @@ function displayPlant(plant, userid) {
   description.textContent = plant.description;
   //
   const image = document.createElement("img");
+  image.classList.add('plant-image');
   image.src = plant.image;
   //
   const linkViewMore = document.createElement("a");
@@ -100,14 +103,6 @@ function displayPlant(plant, userid) {
   return divEl;
 }
 
- function showPlantCareDetails(){
-  let showCareDetails = document.createElement("linkViewMore");
-  console.log('hello world, this is the showPlantCareDetails function');
-  showCareDetails.addEventListener("click", (event) => {
-    // axios event to get care details that match the plant id 
-    // render the care details with the plant name and description and image 
-    //add catch details to the axios event
-  });
- }
+
 
  plantcareDetails()
