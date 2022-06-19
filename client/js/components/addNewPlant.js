@@ -27,9 +27,16 @@ function addNewPlant() {
         event.preventDefault()
         const inputSearch = document.getElementById("search-inp")
         const searchedPlant = inputSearch.value
-        const showPlant = document.createElement("div")
-        showPlant.classList.add("show-plants")
-        section.appendChild(showPlant)
+        
+        let showPlant
+                
+        if(showPlant = document.querySelector('.show-plants')){
+            showPlant.innerHTML = ""
+        }else{
+            showPlant = document.createElement("div")
+            showPlant.classList.add("show-plants")
+            section.appendChild(showPlant)   
+        }
 
         const articleTag = document.createElement('article')
 
@@ -89,7 +96,7 @@ function addPlantsToGreenhhouse() {
                     const plant_idArray = []
                     const data = {
                         name: response.data.name,
-                        userid: response.data.userid,
+                        userid: response.data.id,
                         plantid: plant_idArray
                     }
                     checkedCheckBox.forEach((el) => {

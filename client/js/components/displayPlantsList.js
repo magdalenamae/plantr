@@ -59,6 +59,7 @@ const getUserid = async(sessionurl)=>{
     const response =await axios(sessionurl);
     console.log('response.data',response.data)
     greenhouseurl =`/api/greenHouse/${response.data.id}`
+    console.log(greenhouseurl)
     const response2 = await axios(greenhouseurl)
     console.log('response2 data',response2)
     const listElements = response2.data.map((plant) => displayPlant(plant, response.data.id));
