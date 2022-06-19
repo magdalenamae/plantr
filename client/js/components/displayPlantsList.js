@@ -1,3 +1,5 @@
+// const res = require("express/lib/response");
+
 function displayPlantsList() {
   const section = document.getElementById("plants-details");
   console.log("in display plants");
@@ -5,25 +7,75 @@ function displayPlantsList() {
   const loadingTag = document.createElement("p");
   loadingTag.textContent = "loading";
   //
-  const userid = 4;
+  // const userid = 4;
   section.replaceChildren(loadingTag);
   //
   const heading = document.createElement("h1");
   heading.classList.add("header-h1");
   heading.textContent = "Green House";
 
-  axios.get(`/api/greenHouse/${userid}`).then((response) => {
-    console.log(response.data);
+  //
 
-    const listElements = response.data.map((plant) => displayPlant(plant, userid));
-    console.log(listElements);
-    section.replaceChildren(heading, ...listElements);
-  });
+  //
+  // const userid =23
+  //api session
+  // axios.get(`/api/session`)
+  //   .then((response)=>{
+  //   console.log("in session")
+  //     console.log(response.data.id,"session")
+  //      let userid = response.data.id
+  //      console.log(userid)
+  //     //  useridfromsession = userid
+  //     })
+  //     // console.log(useridfromsession)
+
+  // // console.log(sessionUserid,"sessionUserid,")
+  //   axios.get(`/api/greenHouse/${userid}`)
+  //   .then((response) => {
+  //     console.log(response.data);
+
+  //     const listElements = response.data.map((plant) => displayPlant(plant, userid));
+  //     console.log(listElements);
+  //     section.replaceChildren(heading, ...listElements);
+  //   })
+  //   .catch((error)=>{
+  //     console.log(error.response)
+  //     const errormsg = document.createElement('p')
+  //     errormsg.textContent = "You dont have any plants to display. Please add some plants."
+  //     section.replaceChildren(errormsg)
+  //   })
+
+  // }
+
+  //********************* CODE FOr async wait ti get data grom green house for the logged in user*/
+
+  sessionurl = "http://localhost:3000/api/session";
+  const getUserid = async (sessionurl) => {
+    try {
+      const response = await axios(sessionurl);
+      //   console.log("response.data", response.data);
+      const greenhouseurl = `/api/greenhouse/${response.data.id}`; //gets user_id from greenhouse
+      console.log(greenhouseurl);
+      const response2 = await axios(greenhouseurl);
+      console.log("response2 data", response2.data);
+      const listElements = response2.data.map((plant) => displayPlant(plant, response.data.id));
+      //   console.log(listElements);
+      section.replaceChildren(heading, ...listElements);
+    } catch (error) {
+      console.log(error);
+      console.log(error.response);
+      const errormsg = document.createElement("p");
+      errormsg.textContent = "You dont have any plants to display. Please add some plants.";
+      section.replaceChildren(errormsg);
+    }
+  };
+
+  getUserid(sessionurl);
 }
-
+//********************* */
 function displayPlant(plant, userid) {
   const divEl = document.createElement("div");
-  console.log(divEl);
+  //   console.log(divEl);
   divEl.classList.add("plant");
   divEl.setAttribute("id", plant.id);
   //
@@ -41,13 +93,13 @@ function displayPlant(plant, userid) {
   linkViewMore.textContent = "See more";
   linkViewMore.href = "javascript:void(0)";
   //
-  const deletePlant = document.createElement("a");
-  deletePlant.classList.add("delete-plant");
-  deletePlant.textContent = "delete";
-  deletePlant.href = "javascript:void(0)";
+  const deletePlantButton = document.createElement("p");
+  deletePlantButton.setAttribute("id", "delete-plant");
+  deletePlantButton.textContent = "delete";
   //
-  divEl.append(image, name, description, linkViewMore, deletePlant);
+  divEl.append(image, name, description, linkViewMore, deletePlantButton);
   linkViewMore.addEventListener("click", showPlantsDetails);
+  deletePlantButton.addEventListener("click", deletePlant);
   return divEl;
 }
 
