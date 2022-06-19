@@ -14,6 +14,7 @@ function renderLanding() {
   // app info
   const greeting = document.createElement("p");
   greeting.setAttribute("id", "greeting");
+  
   greeting.textContent =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis unde sequi facilis, voluptate pariatur doloremque hic nobis magni ipsam esse quaerat autem quo explicabo consectetur rerum quas minima quod eius! Consequatur, explicabo laudantium enim culpa quidem maiores cupiditate quisquam voluptas?";
   accountBar.appendChild(greeting);

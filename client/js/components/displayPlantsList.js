@@ -1,4 +1,3 @@
-// const { default: axios } = require("axios");
 
 // const res = require("express/lib/response");
 
@@ -18,22 +17,10 @@ function displayPlantsList() {
   
 
 
-// let Wuserid = getUser()
-// console.log(Wuserid,"Wuserid")
-// async function getUser() { // make function asynchronous
-//   URL = 'http://localhost:3000/api/session'
-//   const results = await axios.get(URL).then(response => { //set await so that when the function is called it knows that a promise is coming
-//   console.log(response.data)
-//   if (response.data.id) { //checks if user is logged in as there are still "sessions" albeit with null info in them when you log out
-//       console.log(response.data.id)
-//       return response.data.id
-//   }
-// })}
+//new approach trying 
 
-
-
-
-
+//
+const userid =23
 //api session
 axios.get(`/api/session`)
   .then((response)=>{
@@ -41,7 +28,10 @@ axios.get(`/api/session`)
     console.log(response.data.id,"session")
      let userid = response.data.id
      console.log(userid)
-  
+    //  useridfromsession = userid
+    })
+    // console.log(useridfromsession)
+
 // console.log(sessionUserid,"sessionUserid,")
   axios.get(`/api/greenHouse/${userid}`)
   .then((response) => {
@@ -50,16 +40,14 @@ axios.get(`/api/session`)
     const listElements = response.data.map((plant) => displayPlant(plant, userid));
     console.log(listElements);
     section.replaceChildren(heading, ...listElements);
-  });
+  })
+  .catch((error)=>{
+    console.log(error.response)
+    const errormsg = document.createElement('p')
+    errormsg.textContent = "You dont have any plants to display. Please add some plants."
+    section.replaceChildren(errormsg)
+  })
  
-  
-})
-.catch((response)=>{
-  console.log(response)
-  if(response.status ===500){
-  console.log("Yor dont have any plants in your Green House. Please add some")
-  }
-})
 }
 
 function displayPlant(plant, userid) {
