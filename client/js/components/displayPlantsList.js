@@ -2,6 +2,7 @@
 // const res = require("express/lib/response");
 
 function displayPlantsList() {
+  console.log('in display plant list')
   const section = document.getElementById("plants-details");
   console.log("in display plants");
   //
