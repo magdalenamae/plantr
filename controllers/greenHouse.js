@@ -19,7 +19,7 @@ router.get("/:id", (req, res) => {
   const user_id = req.params.id;
   console.log(user_id, "user_id");
   const sql =
-    "select p.name ,p.description,p.image ,p.id from plants p,greenhouse g  where p.id = g.plant_id and  g.user_id=$1";
+    "select p.name ,p.description,p.image ,p.id, g.id as greenhouseid from plants p,greenhouse g  where p.id = g.plant_id and  g.user_id=$1";
   db.query(sql, [user_id])
     .then((dbResult) => {
       console.log(dbResult);
