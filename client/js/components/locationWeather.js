@@ -1,6 +1,12 @@
-function getGeoLocationWeather() {
-  KEY = `269c7bb4fd54e8339178e0ccf970b0aa`
+require("dotenv").config()
 
+function getGeoLocationWeather() {
+  // KEY = process.env.OPEN_WEATHER_MAP_KEY
+  KEY =`269c7bb4fd54e8339178e0ccf970b0aa`
+  const weatherContainer = document.getElementById("weather")
+  const loadingMessage = document.createElement('p')
+  loadingMessage.textContent = "loading weather..."
+  weatherContainer.replaceChildren(loadingMessage)
   if (navigator.geolocation) { //check if geolocation is available
     navigator.geolocation.getCurrentPosition(function (position) {
       console.log(position.coords);
@@ -9,7 +15,7 @@ function getGeoLocationWeather() {
         .then((response) => {
           console.log(response)
           console.log(response.data.name)
-          const weatherContainer = document.getElementById("weather")
+          
           console.log(weatherContainer)
           console.log(weather, " in weather")
           const weatherDetails = document.createElement('div')
