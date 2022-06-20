@@ -28,7 +28,7 @@ console.log(newArray,"new array 2")
     const sql = `SELECT * FROM plants where name  ILIKE ANY($1)`
     db.query(sql,[newArray]).then((dbResult) => {
         console.log(sql,queryText)
-      console.log(dbResult.rows)
+      console.log(dbResult.rows,"searchplants ") 
        res.json(dbResult.rows)
     })
 
