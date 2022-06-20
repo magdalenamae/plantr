@@ -27,7 +27,7 @@ function addNewPlant() {
         event.preventDefault()
         const inputSearch = document.getElementById("search-inp")
         const searchedPlant = inputSearch.value
-        
+        ///**************fix for search appending search result */
         let showPlant
                 
         if(showPlant = document.querySelector('.show-plants')){
@@ -37,7 +37,7 @@ function addNewPlant() {
             showPlant.classList.add("show-plants")
             section.appendChild(showPlant)   
         }
-
+        // *************************END**************************
         const articleTag = document.createElement('article')
 
 

@@ -62,6 +62,7 @@ const getUserid = async(sessionurl)=>{
     console.log(greenhouseurl)
     const response2 = await axios(greenhouseurl)
     console.log('response2 data',response2)
+    
     const listElements = response2.data.map((plant) => displayPlant(plant, response.data.id));
     console.log(listElements);
     section.replaceChildren(heading, ...listElements);
