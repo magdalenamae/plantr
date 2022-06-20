@@ -2,6 +2,7 @@
 // const res = require("express/lib/response");
 
 function displayPlantsList() {
+  console.log('in display plant list')
   const section = document.getElementById("plants-details");
   console.log("in display plants");
   //
@@ -58,8 +59,10 @@ const getUserid = async(sessionurl)=>{
     const response =await axios(sessionurl);
     console.log('response.data',response.data)
     greenhouseurl =`/api/greenHouse/${response.data.id}`
+    console.log(greenhouseurl)
     const response2 = await axios(greenhouseurl)
     console.log('response2 data',response2)
+
     const listElements = response2.data.map((plant) => displayPlant(plant, response.data.id));
     console.log(listElements);
     section.replaceChildren(heading, ...listElements);
@@ -80,6 +83,7 @@ function displayPlant(plant, userid) {
   console.log(divEl);
   divEl.classList.add("plant");
   divEl.setAttribute("id", plant.id);
+  divEl.setAttribute("dataset-greenhouseid",plant.greenhouseid)
   // 
   const name = document.createElement("h2");
   name.textContent = plant.name;
