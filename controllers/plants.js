@@ -29,7 +29,12 @@ console.log(newArray,"new array 2")
     db.query(sql,[newArray]).then((dbResult) => {
         console.log(sql,queryText)
       console.log(dbResult.rows,"searchplants ") 
+
        res.json(dbResult.rows)
+    
+    })
+    .catch(error=>{
+        res.status(500).json({success:false, message:"No plants to display"})
     })
 
 })

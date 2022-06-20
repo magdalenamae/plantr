@@ -46,12 +46,12 @@ function addNewPlant() {
             .get(`/api/plants/${searchedPlant}`)
 
             .then((response) => {
-                if (response.data) {
+                 if (response.data.length!=0) {
                     console.log(response)
                     const addPlantsToGreenHouseButton = document.createElement('button')
                     addPlantsToGreenHouseButton.textContent = "add"
                     addPlantsToGreenHouseButton.setAttribute('id', "add-plnts-GreenHouse")
-                    //add buuon triggers another Axios  to add plants to user's greenhouse
+                    //add button triggers another Axios  to add plants to user's greenhouse
                     addPlantsToGreenHouseButton.addEventListener('click', addPlantsToGreenhhouse)
 
                     console.log(response.data)
@@ -60,8 +60,12 @@ function addNewPlant() {
 
                     showPlant.replaceChildren(addPlantsToGreenHouseButton, ...listElements);
                 }
+                else {
+                    showPlant.textContent= "No plants to display"
+                }
          
             })
+            
            
 
     })
