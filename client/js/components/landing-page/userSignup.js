@@ -14,7 +14,7 @@ function renderSignUpForm() {
   // creating form element
 
   const form = document.createElement("form");
-  form.setAttribute('id', 'signUpForm');
+  form.setAttribute("id", "signUpForm");
   form.innerHTML = `
     <input type="text" name="name" placeholder="name" />
     <br>
@@ -25,13 +25,11 @@ function renderSignUpForm() {
     <br>
     <br>
     <br>
-    <button>Sign Up</button>
-    <br>
     <button id="sign-up">Sign Up</button>
 
     `;
   main.innerHTML = "";
-  main.append(signUpDiv)
+  main.append(signUpDiv);
   signUpDiv.append(heading, form);
 
   form.addEventListener("submit", (event) => {
