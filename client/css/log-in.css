@@ -58,5 +58,8 @@ input{
     border-bottom: 2px solid white;
     width: 100%;
     box-shadow: none;
-    border-style: solid
+    border-style: solid;
+    border:none;
+    border-bottom: 2px solid white;
+    grid-column: 2/5;
 }

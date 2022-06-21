@@ -17,7 +17,9 @@ function renderLogin() {
   form.innerHTML = `    
     <input type="text" id='email' name="email" placeholder="email" autocomplete="off" />
     <br>
+    <br>
     <input type="password" id='password' name="password" placeholder="password" autocomplete="off" />
+    <br>
     <br>
     <button>Log in</button>
     `;
