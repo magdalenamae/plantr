@@ -2,6 +2,7 @@ console.log("hi");
 const express = require("express");
 require("dotenv").config();
 const db = require("./database/db.js");
+
 const expressSession = require("express-session");
 const pgSession = require("connect-pg-simple")(expressSession);
 
@@ -48,6 +49,7 @@ app.use((err, req, res, next) => {
   res.status(status).json({ message });
   next(err);
 });
+
 
 // start the web server
 app.listen(port, () => {

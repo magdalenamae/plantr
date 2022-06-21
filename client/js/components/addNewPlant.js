@@ -35,13 +35,13 @@ function addNewPlant() {
         const searchedPlant = inputSearch.value
         ///**************fix for search appending search result */
         let showPlant
-                
-        if(showPlant = document.querySelector('.show-plants')){
+
+        if (showPlant = document.querySelector('.show-plants')) {
             showPlant.innerHTML = ""
-        }else{
+        } else {
             showPlant = document.createElement("div")
             showPlant.classList.add("show-plants")
-            section.appendChild(showPlant)   
+            section.appendChild(showPlant)
         }
         // *************************END**************************
         const articleTag = document.createElement('article')
@@ -52,20 +52,27 @@ function addNewPlant() {
             .get(`/api/plants/${searchedPlant}`)
 
             .then((response) => {
-                const addPlantsToGreenHouseButton = document.createElement('button')
-                addPlantsToGreenHouseButton.textContent = "add"
-                addPlantsToGreenHouseButton.setAttribute('id', "add-plnts-GreenHouse")
-                //add buuon triggers another Axios  to add plants to user's greenhouse
-                addPlantsToGreenHouseButton.addEventListener('click', addPlantsToGreenhhouse)
+                 if (response.data.length!=0) {
+                    console.log(response)
+                    const addPlantsToGreenHouseButton = document.createElement('button')
+                    addPlantsToGreenHouseButton.textContent = "add"
+                    addPlantsToGreenHouseButton.setAttribute('id', "add-plnts-GreenHouse")
+                    //add button triggers another Axios  to add plants to user's greenhouse
+                    addPlantsToGreenHouseButton.addEventListener('click', addPlantsToGreenhhouse)
 
-                console.log(response.data)
-                const listElements = response.data.map((plant) => selectPlantsToAdd(plant));
+                    console.log(response.data)
+                    const listElements = response.data.map((plant) => selectPlantsToAdd(plant));
 
 
-                showPlant.replaceChildren(addPlantsToGreenHouseButton, ...listElements);
-
-
+                    showPlant.replaceChildren(addPlantsToGreenHouseButton, ...listElements);
+                }
+                else {
+                    showPlant.textContent= "No plants to display"
+                }
+         
             })
+            
+           
 
     })
 
@@ -96,52 +103,51 @@ function addPlantsToGreenhhouse() {
     //to get the session user id from the session api and set it to user_id
     sessionurl = 'http://localhost:3000/api/session'
     const getUserid = async (sessionurl) => {
-                try {
-                    const response = await axios(sessionurl);
-                    console.log('response.data', response.data)
-                    const plant_idArray = []
-                    const data = {
-                        name: response.data.name,
-                        userid: response.data.id,
-                        plantid: plant_idArray
-                    }
-                    checkedCheckBox.forEach((el) => {
-
-                        plant_idArray.push(el.id)
-                    })
-                    console.log(data)
-                    axios.post('/api/greenhouse', data)
-                        .then((response) => {
-                            console.log(response)
-                            displayPlantsList()
-                        })
-    // }
-                }
-                catch(error){
-                    console.log(error)
-                    console.log(error.response)
-                }
+        try {
+            const response = await axios(sessionurl);
+            console.log('response.data', response.data)
+            const plant_idArray = []
+            const data = {
+                name: response.data.name,
+                userid: response.data.id,
+                plantid: plant_idArray
             }
-                getUserid(sessionurl)
+            checkedCheckBox.forEach((el) => {
+
+                plant_idArray.push(el.id)
+            })
+            console.log(data)
+            axios.post('/api/greenhouse', data)
+                .then((response) => {
+                    console.log(response)
+                    displayPlantsList()
+                })
+            // }
+        } catch (error) {
+            console.log(error)
+            console.log(error.response)
+        }
     }
+    getUserid(sessionurl)
+}
 
 
 
 
 
-    //                 const plant_idArray = []
-    //                 const data = {
-    //                     name: "anki",
-    //                     userid: 4,
-    //                     plantid: plant_idArray
-    //                 }
-    //                 checkedCheckBox.forEach((el) => {
+//                 const plant_idArray = []
+//                 const data = {
+//                     name: "anki",
+//                     userid: 4,
+//                     plantid: plant_idArray
+//                 }
+//                 checkedCheckBox.forEach((el) => {
 
-    //                     plant_idArray.push(el.id)
-    //                 })
-    //                 console.log(data)
-    //                 axios.post('/api/greenhouse', data)
-    //                     .then((response) => {
-    //                         console.log(response)
-    //                     })
-    // // }
+//                     plant_idArray.push(el.id)
+//                 })
+//                 console.log(data)
+//                 axios.post('/api/greenhouse', data)
+//                     .then((response) => {
+//                         console.log(response)
+//                     })
+// // }
