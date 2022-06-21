@@ -1,79 +1,75 @@
-body{
-    background-color:lightgray;
-    padding: 0%;
-    margin: 0%;
-    font-family: Inter;
+body {
+  background-color: lightgray;
+  padding: 0%;
+  margin: 0%;
+  font-family: Inter, Calibri, "Trebuchet MS", sans-serif;
 }
 
 #index-nav {
-    background-color:white;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
-.account-bar{
-    display: grid;
-    margin: 0;
-    padding: 0;
-    grid-template-columns: 75px 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr ;
-  
+.account-bar {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: 75px 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
-.page-title{
-    display: grid;
-    width: 75%;
-    grid-column: 2;
-    grid-row: 2;
+.page-title {
+  display: grid;
+  width: 75%;
+  grid-column: 2;
+  grid-row: 2;
 }
-#container-img{
-    display: grid;
-    place-items: center;
-    padding: 10px;
-    
+#container-img {
+  display: grid;
+  place-items: center;
+  padding: 10px;
 }
-#landing-logo{
-    width: 10%;
+#landing-logo {
+  width: 10%;
 }
-#greeting{
-    font-size: 32px;
-    display: grid;
-    grid-column: 2/3;
-    grid-row: 3;
-    font-size: 20px;
+#greeting {
+  font-size: 32px;
+  display: grid;
+  grid-column: 2/3;
+  grid-row: 3;
+  font-size: 20px;
 }
 
-.account-nav{
-    display: grid;
-    grid-column: 2;
-    grid-row: 4;
-    justify-content: center;
-    padding: 0%;
-    grid-gap: 15px;
-    justify-content: start;
+.account-nav {
+  display: grid;
+  grid-column: 2;
+  grid-row: 4;
+  justify-content: center;
+  padding: 0%;
+  grid-gap: 15px;
+  justify-content: start;
 }
 
-#signup-link{
-    background-color: grey;
-    border-radius: 7px;
-    display: grid;
-    grid-column: 2;
-    grid-row: 4;
-    align-content: space-around;
-    justify-content: center;
-    width: 90px;
-    color: white;
-   
+#signup-link {
+  background-color: grey;
+  border-radius: 7px;
+  display: grid;
+  grid-column: 2;
+  grid-row: 4;
+  align-content: space-around;
+  justify-content: center;
+  width: 90px;
+  color: white;
 }
 
-#login-link{
-    color: white;
-    background-color: grey;
-    border-radius: 7px;
-    display: grid;
-    grid-column: 1;
-    grid-row: 4;
-    align-content: space-around;
-    justify-content: center;
-    width: 90px;
+#login-link {
+  color: white;
+  background-color: grey;
+  border-radius: 7px;
+  display: grid;
+  grid-column: 1;
+  grid-row: 4;
+  align-content: space-around;
+  justify-content: center;
+  width: 90px;
 }
