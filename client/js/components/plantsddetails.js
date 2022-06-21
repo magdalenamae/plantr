@@ -20,7 +20,6 @@ function showPlantsDetails(){
         light = result.light
         humidity = result.humidity
         soil = result.soil
-
         console.log(id,plantName)
         
        }
@@ -52,8 +51,5 @@ function showPlantsDetails(){
        plantDiv.appendChild(careDiv)
        careDiv.append(head,img,careDesc, careList)
     })
-   
-  
 }
-
 showPlantsDetails()
