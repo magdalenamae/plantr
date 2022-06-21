@@ -1,7 +1,7 @@
 console.log("hi");
 const express = require("express");
+require("dotenv").config();
 const db = require("./database/db.js");
-
 const expressSession = require("express-session");
 const pgSession = require("connect-pg-simple")(expressSession);
 
@@ -24,7 +24,7 @@ app.use(
       pool: db,
       createTableIfMissing: true,
     }),
-    secret: "this is a secret key",
+    secret: process.env.EXPRESS_SESSION_SECRET_KEY,
   })
 );
 
