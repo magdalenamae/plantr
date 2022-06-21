@@ -11,6 +11,8 @@ function accountInfo() {
       console.log(userName);
       const userGreeting = document.getElementById("logininfo");
       userGreeting.textContent = `Logged in as ${userName} `;
+      
+      
     })
     .catch((err) => {
       if (err.response.status === 401) {

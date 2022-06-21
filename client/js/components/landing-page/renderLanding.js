@@ -8,17 +8,21 @@ function renderLanding() {
   accountBar.className = "account-bar";
   accountField.appendChild(accountBar);
   // heading
-  const pageTitle = document.createElement("h1");
-  pageTitle.textContent = "PLNTR";
+  const pageTitle = document.createElement("img");
+  pageTitle.src = "./images/PLNTR.png"
+  pageTitle.className = "page-title";
   accountBar.appendChild(pageTitle);
+
   // app info
   const greeting = document.createElement("p");
   greeting.setAttribute("id", "greeting");
+  
   greeting.textContent =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis unde sequi facilis, voluptate pariatur doloremque hic nobis magni ipsam esse quaerat autem quo explicabo consectetur rerum quas minima quod eius! Consequatur, explicabo laudantium enim culpa quidem maiores cupiditate quisquam voluptas?";
+    "A group project made by Ankita, Eleanor and Magdalena to help keep your plant buddies alive and track their progress";
   accountBar.appendChild(greeting);
   // links
   const accountNav = document.createElement("ul");
+  accountNav.classList.add("account-nav");
   accountBar.appendChild(accountNav);
   // list items
   const addUser = document.createElement("li");
