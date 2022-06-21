@@ -1,4 +1,5 @@
 console.log("account running");
+
 const navBar = document.getElementById("nav");
 
 function accountInfo() {
