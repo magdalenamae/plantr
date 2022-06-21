@@ -1,7 +1,7 @@
 console.log("hi");
 const express = require("express");
+require("dotenv").config();
 const db = require("./database/db.js");
-
 
 const expressSession = require("express-session");
 const pgSession = require("connect-pg-simple")(expressSession);
@@ -14,7 +14,7 @@ const signupController = require("./controllers/signup");
 const careController = require("./controllers/care");
 const { append } = require("express/lib/response.js");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.use(express.static("client"));
 app.use(express.json());
 
@@ -25,7 +25,7 @@ app.use(
       pool: db,
       createTableIfMissing: true,
     }),
-    secret: "this is a secret key",
+    secret: process.env.EXPRESS_SESSION_SECRET_KEY,
   })
 );
 

@@ -20,7 +20,6 @@ function showPlantsDetails(){
         light = result.light
         humidity = result.humidity
         soil = result.soil
-
         console.log(id,plantName)
         
        }
@@ -52,15 +51,5 @@ function showPlantsDetails(){
        plantDiv.appendChild(careDiv)
        careDiv.append(head,img,careDesc, careList)
     })
-   
-    // axios
-    // .get(`/api/plants/${plant}`)
-    // .then((response)=>{
-    //     console.log(response.data)
-    //     const listElements = response.data.map((plant)=>displayPlant(plant))
-    //     console.log(listElements)
-    //     section.replaceChildren(heading,...listElements)
-    // })
 }
-
 showPlantsDetails()

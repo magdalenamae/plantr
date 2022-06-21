@@ -1,12 +1,17 @@
+const pg = require("pg");
 
-// 1. Import the pg library
-const pg = require("pg")
-// 2. Connect to the database
+let db;
+if (process.env.NODE_ENV === "production") {
+  db = new pg.Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  });
+} else {
+  db = new pg.Pool({
+    database: "plantr",
+  });
+}
 
-
-const db = new pg.Pool({
-    database: 'plantr'
-  })
-
-  
-  module.exports = db
+module.exports = db;

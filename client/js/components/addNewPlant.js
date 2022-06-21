@@ -6,9 +6,15 @@ function addNewPlant() {
     console.log('in add plants')
     const addForm = document.getElementById("plants-details");
     //form to be added in
+    
     addForm.textContent = "add your plant";
 
     const section = document.getElementById("plants-details");
+
+    const careSection = document.getElementById("care-details");
+    careSection.innerHTML = "";
+
+
 
     const formEl = document.createElement('form')
     formEl.setAttribute('id', 'search-plant')
