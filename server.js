@@ -11,6 +11,8 @@ const greenHouseControllers = require("./controllers/greenHouse.js");
 const sessionController = require("./controllers/session");
 const plantsController = require("./controllers/plants");
 const signupController = require("./controllers/signup");
+const careController = require("./controllers/care");
+const { append } = require("express/lib/response.js");
 const app = express();
 const port = 3000;
 app.use(express.static("client"));
@@ -38,6 +40,7 @@ app.use("/api/greenHouse", greenHouseControllers);
 app.use("/api/session", sessionController);
 app.use("/api/plants", plantsController);
 app.use("/api/users", signupController);
+app.use("/api/care", careController);
 
 //handle any error that wasn't handled
 app.use((err, req, res, next) => {
