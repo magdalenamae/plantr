@@ -32,7 +32,6 @@ function renderLogin() {
   logInForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(logInForm));
-    console.log("this is the data: ", data);
     axios
       .post("/api/session", data)
       .then(() => (window.location = "/greenhouse.html"))

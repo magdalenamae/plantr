@@ -10,62 +10,74 @@ function addNewPlant() {
     addForm.textContent = "add your plant";
 
     const section = document.getElementById("plants-details");
+
     const careSection = document.getElementById("care-details");
     careSection.innerHTML = "";
+
+
+
     const formEl = document.createElement('form')
-    formEl.setAttribute('id','search-plant')
+    formEl.setAttribute('id', 'search-plant')
     const heading = document.createElement('h1')
-    heading.textContent =" Add New Plant"
+    heading.textContent = " Add New Plant"
     formEl.innerHTML = `
     <br>
     <label for="name">Name</label>
     <input type="text" name="name" id ='search-inp'>
     <button id ="add-pl-submit-btn" >Search</button>
     `
-    
+
     section.replaceChildren(formEl)
-    const searchButton=document.getElementById('add-pl-submit-btn')
-    formEl.addEventListener('submit',(event)=>{
+    const searchButton = document.getElementById('add-pl-submit-btn')
+    formEl.addEventListener('submit', (event) => {
         event.preventDefault()
         const inputSearch = document.getElementById("search-inp")
         const searchedPlant = inputSearch.value
-        const showPlant = document.createElement("div")
-        showPlant.classList.add ("show-plants")
-        section.appendChild(showPlant)
-        
+        ///**************fix for search appending search result */
+        let showPlant
+                
+        if(showPlant = document.querySelector('.show-plants')){
+            showPlant.innerHTML = ""
+        }else{
+            showPlant = document.createElement("div")
+            showPlant.classList.add("show-plants")
+            section.appendChild(showPlant)   
+        }
+        // *************************END**************************
         const articleTag = document.createElement('article')
-        
-        
-        
+
+
+
         axios
             .get(`/api/plants/${searchedPlant}`)
-           
-            .then((response)=>{
+
+            .then((response) => {
                 const addPlantsToGreenHouseButton = document.createElement('button')
-                addPlantsToGreenHouseButton.textContent="add"
-                addPlantsToGreenHouseButton.setAttribute('id',"add-plnts-GreenHouse")
+                addPlantsToGreenHouseButton.textContent = "add"
+                addPlantsToGreenHouseButton.setAttribute('id', "add-plnts-GreenHouse")
                 //add buuon triggers another Axios  to add plants to user's greenhouse
-                addPlantsToGreenHouseButton.addEventListener('click',addPlantsToGreenhhouse)
-               
+                addPlantsToGreenHouseButton.addEventListener('click', addPlantsToGreenhhouse)
+
                 console.log(response.data)
                 const listElements = response.data.map((plant) => selectPlantsToAdd(plant));
-    
-             
+
+
                 showPlant.replaceChildren(addPlantsToGreenHouseButton, ...listElements);
-               
-               
+
+
             })
 
     })
 
 }
-function selectPlantsToAdd(plant){
+
+function selectPlantsToAdd(plant) {
     const divEl = document.createElement("div");
     console.log(divEl);
     divEl.classList.add("select-plant");
     //create checkbox
     const selectCheckBox = document.createElement('input')
-    selectCheckBox.type ='checkbox'
+    selectCheckBox.type = 'checkbox'
     selectCheckBox.setAttribute("id", plant.id);
     const name = document.createElement("h2");
     name.textContent = plant.name;
@@ -73,35 +85,63 @@ function selectPlantsToAdd(plant){
     description.textContent = plant.description;
     const image = document.createElement("img");
     image.src = plant.image;
-    divEl.append(selectCheckBox,image, name, description);
+    divEl.append(selectCheckBox, image, name, description);
     return divEl;
 }
 
-function addPlantsToGreenhhouse(){
-    const checkedCheckBox =  document.querySelectorAll('input[type="checkbox"]:checked');
+function addPlantsToGreenhhouse() {
+    const checkedCheckBox = document.querySelectorAll('input[type="checkbox"]:checked');
     console.log(checkedCheckBox)
 
-//to get the session user id from the session api and set it to user_id
-        // axios
-        // .get(`/api/session`)
-        // .then((response)=>{
-        //     console.log(response)
-        // })
+    //to get the session user id from the session api and set it to user_id
+    sessionurl = 'http://localhost:3000/api/session'
+    const getUserid = async (sessionurl) => {
+                try {
+                    const response = await axios(sessionurl);
+                    console.log('response.data', response.data)
+                    const plant_idArray = []
+                    const data = {
+                        name: response.data.name,
+                        userid: response.data.id,
+                        plantid: plant_idArray
+                    }
+                    checkedCheckBox.forEach((el) => {
 
-
-    const plant_idArray = []
-    const data = {
-        name : "anki",
-        userid: 4,
-        plantid:  plant_idArray
+                        plant_idArray.push(el.id)
+                    })
+                    console.log(data)
+                    axios.post('/api/greenhouse', data)
+                        .then((response) => {
+                            console.log(response)
+                            displayPlantsList()
+                        })
+    // }
+                }
+                catch(error){
+                    console.log(error)
+                    console.log(error.response)
+                }
+            }
+                getUserid(sessionurl)
     }
-    checkedCheckBox.forEach((el)=>{
-        
-        plant_idArray.push(el.id)
-    })
-    console.log(data)
-    axios.post('/api/greenhouse',data)
-        .then((response)=>{
-            console.log(response)
-        })
-}
+
+
+
+
+
+    //                 const plant_idArray = []
+    //                 const data = {
+    //                     name: "anki",
+    //                     userid: 4,
+    //                     plantid: plant_idArray
+    //                 }
+    //                 checkedCheckBox.forEach((el) => {
+
+    //                     plant_idArray.push(el.id)
+    //                 })
+    //                 console.log(data)
+    //                 axios.post('/api/greenhouse', data)
+    //                     .then((response) => {
+    //                         console.log(response)
+    //                     })
+    // // }
