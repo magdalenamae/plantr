@@ -1,0 +1,65 @@
+body{
+    max-width: 100%;
+}
+.login-div{
+    height: 1000px;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr ;
+    grid-template-rows:100px 1fr 1fr 1fr 1fr;
+    max-width: 100%;
+}
+
+.login-content-div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-start: 2 ;
+    grid-column-end: 5;
+    grid-row: 2/4;
+    background-color: grey;
+}
+
+.login-heading{
+    display: grid;
+    font-size: 32px;
+    grid-column: 2/4;
+    color: white;
+    text-align: center;
+}
+
+.login-message{
+    display: grid;
+    color: white;
+    text-align: center;
+    grid-column: 2/4;
+    grid-row: 2;
+}
+
+#login-form{
+    display: grid;
+    grid-column: 2/4;
+    grid-row: 3;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 10px;
+    margin:10px;
+    background-color: grey;
+    border-bottom: 2px solid white;
+}
+
+input{
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    display: grid;
+    background: none;
+    background-color: grey;
+    border-bottom: 2px solid white;
+    width: 100%;
+    box-shadow: none;
+    border-style: solid;
+    border:none;
+    border-bottom: 2px solid white;
+    grid-column: 2/5;
+}

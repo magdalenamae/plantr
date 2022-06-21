@@ -13,7 +13,7 @@ const signupController = require("./controllers/signup");
 const careController = require("./controllers/care");
 const { append } = require("express/lib/response.js");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.use(express.static("client"));
 app.use(express.json());
 

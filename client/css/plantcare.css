@@ -1,0 +1,38 @@
+body{
+    font-family: Inter ;
+}
+.care-div{
+   width: 100%;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 100px 100px 100px 100px;
+   background-color: white ;
+}
+
+
+.care-list{
+    display: grid;
+    grid-column-start: 1;
+    background-color: white;
+}
+
+h1{
+    margin-left: 10px;
+    display: grid;
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.care-desc{
+    display: grid;
+    grid-column-start: 1;
+    padding: 15px;
+    position: relative;
+    grid-row-start: 2;
+    background-color: white;
+}
+
+.care-img{
+    display: grid;
+    grid-row: 2/-1;
+}

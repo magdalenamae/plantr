@@ -1,9 +1,8 @@
 console.log("initialised");
-
 renderLanding();
 
 // clicking the logo in the navbar reloads the page (need to add CSS)
-const homeRefresh = document.getElementById("logo");
+const homeRefresh = document.getElementById("landing-logo");
 homeRefresh.addEventListener("click", (event) => {
   location.reload();
   //   renderLanding();
@@ -14,7 +13,7 @@ runSignUp.addEventListener("click", (event) => {
   renderSignUpForm();
 });
 
-const runLogin = document.getElementById("login-link");
-runLogin.addEventListener("click", (event) => {
+const runLoginPage = document.getElementById("login-link");
+runLoginPage.addEventListener("click", (event) => {
   renderLogin();
 });
