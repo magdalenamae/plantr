@@ -62,7 +62,7 @@ function displayPlant(plant, userid) {
   image.src = plant.image;
   //
   const linkViewMore = document.createElement("a");
-  linkViewMore.classList;
+  linkViewMore.classList.add('see-more');
   linkViewMore.textContent = "See more";
   linkViewMore.href = "javascript:void(0)";
   //
