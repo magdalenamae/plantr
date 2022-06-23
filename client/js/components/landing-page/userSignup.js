@@ -12,9 +12,17 @@ function renderSignUpForm() {
   heading.setAttribute("id", "signUpHeading");
   const signUpMessage = document.createElement("p");
   signUpMessage.setAttribute("id", "signUp-msg");
-  signUpMessage.textContent = 'Already have an Account? Log in';
-  // creating form element
+  signUpMessage.textContent = "Already have an account?";
+  const loginMessage = document.createElement("span");
+  loginMessage.setAttribute("id", "switchLogin");
+  loginMessage.textContent = "Log in";
+  signUpMessage.append(loginMessage);
+  signUpMessage.addEventListener("click", (event) => {
+    main.innerHTML = "";
+    renderLogin();
+  });
 
+  // creating form element
   const form = document.createElement("form");
   form.setAttribute("id", "signUpForm");
   form.innerHTML = `
@@ -32,7 +40,7 @@ function renderSignUpForm() {
     `;
   main.innerHTML = "";
   main.append(signUpDiv);
-  signUpDiv.append(heading,signUpMessage, form);
+  signUpDiv.append(heading, signUpMessage, form);
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
