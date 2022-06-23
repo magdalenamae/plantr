@@ -48,8 +48,9 @@ function showPlantsDetails(){
             soilLi.textContent = soil + ' soil'
        
        careList.append(waterLi,lightLi,humidityLi,soilLi) 
-       plantDiv.appendChild(careDiv)
-       careDiv.append(head,img,careDesc, careList)
+       plantDiv.append(careDiv,imageDiv)
+       careDiv.append(head,careDesc, careList)
+       imageDiv.append(img)
     })
 }
 showPlantsDetails()

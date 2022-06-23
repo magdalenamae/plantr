@@ -35,9 +35,5 @@ console.log(newArray,"new array 2")
     })
     .catch(error=>{
         res.status(500).json({success:false, message:"No plants to display"})
-    })
-
 })
-
-
 module.exports = router;
