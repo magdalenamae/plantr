@@ -41,7 +41,8 @@ router.post("/", (req, res) => {
         res.json({ success: true });
       })
       .catch((reason) => {
-        res.status(500).json({ message: "Unknown error occured" });
+        console.log(reason)
+        res.status(500).json({ message: reason });
       });
   }
 });
