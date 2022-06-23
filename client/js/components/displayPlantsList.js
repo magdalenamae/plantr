@@ -15,7 +15,7 @@ function displayPlantsList() {
   //
   const heading = document.createElement("h1");
   heading.classList.add("header-h1");
-  heading.textContent = "Green House";
+  // heading.textContent = "Green House";
 
   //********************* CODE FOr async wait ti get data grom green house for the logged in user*/
 
@@ -29,6 +29,7 @@ function displayPlantsList() {
       const response2 = await axios(greenhouseurl);
       console.log("response2 data", response2);
 
+      heading.textContent = `hello ${response.data.name},this is your greenhouse`;
       const listElements = response2.data.map((plant) => displayPlant(plant, response.data.id));
       console.log(listElements);
       section.replaceChildren(heading, ...listElements);
