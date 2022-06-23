@@ -2,6 +2,7 @@ console.log("login running");
 
 function renderLogin() {
   const main = document.getElementById("landing");
+
   let logInDiv = document.createElement("div");
   logInDiv.classList.add("login-div");
   let logInContentDiv = document.createElement("div");
@@ -39,14 +40,14 @@ function renderLogin() {
   });
 }
 
-const logInBtn = document.getElementById('login-btn');
+// const logInBtn = document.getElementById('login-btn');
 
-logInBtn.addEventListener('click', function onClick(event) {
-  const input = document.getElementById('email');
-  const inputTwo = document.getElementById('password');
-  let color = '#7E8285';
-  input.style.backgroundColor = color;
-  inputTwo.style.backgroundColor = color;
-  console.log('login button clicked');
+// logInBtn.addEventListener('click', function onClick(event) {
+//   const input = document.getElementById('email');
+//   const inputTwo = document.getElementById('password');
+//   let color = '#7E8285';
+//   input.style.backgroundColor = color;
+//   inputTwo.style.backgroundColor = color;
+//   console.log('login button clicked');
  
-});
+// });
