@@ -21,7 +21,7 @@ router.get("/:name", (req, res) => {
   array.forEach((value) => {
     newArray.push(`%${value}%`);
   });
-
+})
 router.get('/:name', (req,res)=>{
     const plantName = req.params.name
     const array = plantName.split(" ")
@@ -43,7 +43,7 @@ console.log(newArray,"new array 2")
     .catch(error=>{
         res.status(500).json({success:false, message:"No plants to display"})
     })
-
+  })
 //   console.log(newArray.toString(), "new array");
 //   const queryText = newArray.toString();
 //   console.log(newArray, "new array 2");

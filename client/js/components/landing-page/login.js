@@ -15,13 +15,13 @@ function renderLogin() {
   message.textContent = "Dont have an account? Sign up";
   form.setAttribute("id", "login-form");
   form.innerHTML = `    
-    <input type="text" id='email' name="email" placeholder="email" autocomplete="off" />
+    <input type="text" id='email' name="email" placeholder="Email" autocomplete="off" />
     <br>
     <br>
-    <input type="password" id='password' name="password" placeholder="password" autocomplete="off" />
+    <input type="password" id='password' name="password" placeholder="Password" autocomplete="off" />
     <br>
     <br>
-    <button>Log in</button>
+    <button id="login-btn" name="login">Log in</button>
     `;
  
   logInDiv.append(logInContentDiv);
@@ -38,3 +38,15 @@ function renderLogin() {
       .catch((err) => (document.getElementById("errors").innerHTML = err.response.data.message));
   });
 }
+
+const logInBtn = document.getElementById('login-btn');
+
+logInBtn.addEventListener('click', function onClick(event) {
+  const input = document.getElementById('email');
+  const inputTwo = document.getElementById('password');
+  let color = '#7E8285';
+  input.style.backgroundColor = color;
+  inputTwo.style.backgroundColor = color;
+  console.log('login button clicked');
+ 
+});

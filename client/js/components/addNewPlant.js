@@ -130,24 +130,3 @@ function addPlantsToGreenhhouse() {
     }
     getUserid(sessionurl)
 }
-
-
-
-
-
-//                 const plant_idArray = []
-//                 const data = {
-//                     name: "anki",
-//                     userid: 4,
-//                     plantid: plant_idArray
-//                 }
-//                 checkedCheckBox.forEach((el) => {
-
-//                     plant_idArray.push(el.id)
-//                 })
-//                 console.log(data)
-//                 axios.post('/api/greenhouse', data)
-//                     .then((response) => {
-//                         console.log(response)
-//                     })
-// // }
