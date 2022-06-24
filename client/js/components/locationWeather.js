@@ -1,6 +1,6 @@
 
 function getGeoLocationWeather() {
-  // KEY = process.env.OPEN_WEATHER_MAP_KEY
+  // const KEY = process.env.OPEN_WEATHER_MAP_KEY
   KEY =`269c7bb4fd54e8339178e0ccf970b0aa`
   const weatherContainer = document.getElementById("weather")
   const loadingMessage = document.createElement('p')
