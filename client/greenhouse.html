@@ -4,32 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-
+    <title>PLNTR - Your greenhouse</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/components/header.js"></script>
     <script src="./js/components/account.js"></script>
     <script src="./js/components/logout.js"></script>
     <script src="./js/components/displayPlantsList.js"></script>
-    <script src="./js/components/plantsddetails.js"></script>
     <script src="./js/components/addNewPlant.js"></script>
-    <script src="./js/components/header.js"></script>
+    <script defer src="./js/components/plantsdetails.js"></script>
     <script src="./js/components/locationWeather.js"></script>
-  
-
     <script defer src="./js/initialise.js"></script>
 
-    <link href="./css/displayPlants.css" rel="stylesheet"/>
-    <link href="./css/addNewPlants.css" rel="stylesheet"/>
-
-    <link href="./css/plantcare.css" rel="stylesheet"/>
-    <link href="./css/navbar.css" rel="stylesheet"/>
-    <link href="./css/landing.css" rel="stylesheet"/>
-
+    <link href="./css/displayPlants.css" rel="stylesheet" />
+    <link href="./css/addNewPlants.css" rel="stylesheet" />
+    <link href="./css/plantcare.css" rel="stylesheet" />
+    <link href="./css/navbar.css" rel="stylesheet" />
+    <link href="./css/landing.css" rel="stylesheet" />
   </head>
+
   <body>
     <header id="header-contr">
-     
-      <!-- <h1 id="logo">Planter</h1> -->
       <nav id="nav">
         <img src="./images/PLNTR.png" id="logo" alt="plantr logo" />
         <button class="button-plants" id="get-plants">View Plants</button>
@@ -41,7 +35,6 @@
 
     <!--  got weather display  -->
     <article class="weather-container" id="weather"></article>
-
 
     <section id="plants-details"></section>
     <section id="care-details"></section>

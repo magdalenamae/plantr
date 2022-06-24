@@ -1,18 +1,12 @@
-console.log("account running");
-
 const navBar = document.getElementById("nav");
 
 function accountInfo() {
   axios
     .get("/api/session")
     .then((response) => {
-      console.log(response.data);
       const userName = response.data.name;
-      console.log(userName);
       const userGreeting = document.getElementById("logininfo");
       userGreeting.textContent = `Logged in as ${userName} `;
-      
-      
     })
     .catch((err) => {
       if (err.response.status === 401) {
@@ -24,6 +18,5 @@ function accountInfo() {
         loginInfo.appendChild(loginLink);
         return;
       }
-      console.warn(err);
     });
 }
