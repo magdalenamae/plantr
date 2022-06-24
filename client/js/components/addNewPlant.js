@@ -80,6 +80,7 @@ function selectPlantsToAdd(plant) {
   const description = document.createElement("p");
   description.textContent = plant.description;
   const image = document.createElement("img");
+  image.setAttribute("id", 'plant-image');
   image.src = plant.image;
   divEl.append(selectCheckBox, image, name, description);
   return divEl;

@@ -64,6 +64,7 @@ input{
     border-bottom: 2px solid white;
     grid-column: 1/5;
     padding-bottom: 10px;
+    color: white;
 }
 input:-internal-autofill-selected {
     appearance: menulist-button;
@@ -71,6 +72,12 @@ input:-internal-autofill-selected {
     background-color: -internal-light-dark( rgba(70, 90, 126, 0.4),rgb(232, 240, 254)) !important;
     color: fieldtext !important;
 }
+input:-webkit-autofill:focus{
+    background-color: #7E8285 !important;
+    outline: none;
+}
+
+
 #email{
     width: 100%;
 }

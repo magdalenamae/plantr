@@ -1,4 +1,28 @@
-#search-plant {
+.search-plant {
+    display: grid;
     grid-column-start: 1;
     grid-column-end: 4;
+}
+
+.select-plant {
+    display: inline-flex;
+    width: 500px;
+    height: 500px;
+    padding: 25px;
+    background-color: white;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.show-plants{
+    display: flex;
+    vertical-align: top;
+    flex-wrap: wrap;
+}
+
+#plant-image{
+   width: 50%;
+   height: 50%;
 }

@@ -1,5 +1,5 @@
 // const res = require("express/lib/response");
-
+//greenhouse
 function displayPlantsList() {
   console.log("in display plant list");
   const section = document.getElementById("plants-details");
@@ -44,6 +44,7 @@ function displayPlantsList() {
   getUserid(sessionurl);
 }
 function displayPlant(plant, userid) {
+  console.log('userid', userid);
   const divEl = document.createElement("div");
   console.log(divEl);
   divEl.classList.add("plant");

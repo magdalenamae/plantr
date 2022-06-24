@@ -13,12 +13,12 @@ body {
 }
 
 #plants-details {
-  margin: 15px;
+  margin: 32px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 75px 1fr;
   grid-template-areas: "header header header";
-  grid-gap: 20px;
+  grid-gap: 16px;
 }
 h1.header-h1 {
   grid-area: header;

@@ -17,18 +17,28 @@ function getGeoLocationWeather() {
           
           console.log(weatherContainer)
           console.log(weather, " in weather")
+
           const weatherDetails = document.createElement('div')
+          weatherDetails.setAttribute('id', 'weather-details')
+
           const currentLocation = document.createElement('p')
+          currentLocation.setAttribute('id', 'weather-details')
+           
           const description = document.createElement('p')
+          description.setAttribute('id', 'weather-details')
+
           description.textContent = response.data.weather[0].description
           currentLocation.textContent = response.data.name
+
           icon =response.data.weather[0].icon
           const image = document.createElement('img')
           image.src = "http://openweathermap.org/img/wn/"+ icon+"@2x.png";
+          image.setAttribute('id', 'weather-icon')
           const temp = document.createElement('p')
           const tempInDegree = Number(response.data.main.temp - 273.15).toFixed(0) + "°C";
           temp.textContent = tempInDegree
-          weatherDetails.append(temp,image,description,currentLocation)
+          temp.setAttribute('id', 'weather-details')
+          weatherDetails.append(temp,currentLocation,description)
           weatherContainer.replaceChildren(weatherDetails)
 
         })
