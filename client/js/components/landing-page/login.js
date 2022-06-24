@@ -14,6 +14,7 @@ function renderLogin() {
   const message = document.createElement("p");
   message.classList.add("login-message");
   message.textContent = "Dont have an account? Sign up";
+
   form.setAttribute("id", "login-form");
   form.innerHTML = `
     <input type="text" id='email' name="email" placeholder="Email" autocomplete="off" />

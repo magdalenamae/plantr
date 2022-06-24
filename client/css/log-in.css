@@ -13,10 +13,13 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-column-start: 2 ;
+    grid-column-start: 2;
     grid-column-end: 5;
     grid-row: 2/4;
     background-color: #7E8285;
+    opacity: 65%;
+    border-radius: 25px;
+    border: 2px solid white;
 }
 
 .login-heading{
@@ -92,6 +95,9 @@ input:-webkit-autofill:focus{
     border: none;
     color: #7E8285;
     background-color: white;
+    height: 150%;
+    justify-content: center;
+    align-items: center;
 }
 
 ::placeholder{
