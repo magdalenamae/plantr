@@ -31,6 +31,15 @@ body {
   grid-column: 2/5;
   color: white;
   text-align: center;
+  margin-bottom: 60px;
+}
+
+#switchLogin{
+  color: #8DD18D;
+}
+
+#switchSignup{
+  color: #8DD18D;
 }
 
 #signUpForm {
