@@ -52,7 +52,6 @@ function addNewPlant() {
           manualAdd.textContent = "Add your own manually?";
           showPlant.appendChild(manualAdd);
           manualAdd.addEventListener("click", (event) => {
-            console.log("click");
             renderManualAdd();
           });
         }

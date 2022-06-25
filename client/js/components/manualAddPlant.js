@@ -33,9 +33,8 @@ function renderManualAdd() {
 
     // sending data to server/database
     axios.post("/api/plants", data).then((response) => {
-      //   section.innerHTML = "";
-      console.log("submitted");
-      //   renderLogin();
+      section.innerHTML = "";
+      addNewPlant();
     });
   });
 }
