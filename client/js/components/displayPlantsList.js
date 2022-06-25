@@ -8,7 +8,7 @@ function displayPlantsList() {
   section.replaceChildren(loadingTag);
   //
   const heading = document.createElement("h1");
-  heading.classList.add("header-h1");
+  heading.classList.add("header-greenhouseh1");
 
   //async
   sessionurl = "/api/session";
@@ -30,6 +30,7 @@ function displayPlantsList() {
 }
 
 function displayPlant(plant, userid) {
+  console.log('userid', userid);
   const divEl = document.createElement("div");
   divEl.classList.add("plant");
   divEl.setAttribute("id", plant.id);

@@ -1,5 +1,4 @@
 function getGeoLocationWeather() {
-  // const KEY = process.env.OPEN_WEATHER_MAP_KEY;
   KEY = `269c7bb4fd54e8339178e0ccf970b0aa`;
   const weatherContainer = document.getElementById("weather");
   const loadingMessage = document.createElement("p");
@@ -14,10 +13,17 @@ function getGeoLocationWeather() {
         )
         .then((response) => {
           const weatherDetails = document.createElement("div");
+          weatherDetails.setAttribute('id', 'weather-details')
+      
           const currentLocation = document.createElement("p");
+          currentLocation.setAttribute('id', 'weather-details')
+      
           const description = document.createElement("p");
+          description.setAttribute('id', 'weather-details')
+      
           description.textContent = response.data.weather[0].description;
           currentLocation.textContent = response.data.name;
+      
           icon = response.data.weather[0].icon;
           const image = document.createElement("img");
           image.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";

@@ -25,7 +25,7 @@ function renderLogin() {
   //form element
   const form = document.createElement("form");
   form.setAttribute("id", "login-form");
-  form.innerHTML = `    
+  form.innerHTML = `
     <input type="text" id='email' name="email" placeholder="Email" autocomplete="off" />
     <br>
     <br>
@@ -34,6 +34,10 @@ function renderLogin() {
     <br>
     <button id="login-btn" name="login">Log in</button>
     `;
+
+  form.setAttribute('autocomplete', 'off');
+
+
 
   logInDiv.append(logInContentDiv);
   logInContentDiv.append(heading, message, form);

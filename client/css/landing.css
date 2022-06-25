@@ -11,6 +11,7 @@ body {
   padding: 0;
   width: 100%;
 }
+
 .account-bar {
   display: grid;
   margin: 0;
@@ -19,21 +20,25 @@ body {
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   background-color: #d1d9dd;
 }
+
 .page-title {
   display: grid;
   width: 75%;
   grid-column: 2;
   grid-row: 2;
 }
+
 #container-img {
   display: grid;
   place-items: center;
   padding: 10px;
 }
+
 #landing-logo {
   width: 10%;
   padding: 10px;
 }
+
 #greeting {
   font-size: 32px;
   display: grid;
@@ -75,6 +80,11 @@ body {
   justify-content: center;
   width: 90px;
 }
+
+header {
+  display: grid;
+}
+
 input:-webkit-autofill {
   -webkit-text-fill-color: #7e8285 !important;
 }
@@ -86,6 +96,7 @@ input:-webkit-autofill {
   grid-template-columns: 75px 2fr 1fr 1fr;
   grid-template-rows: 1fr;
 }
+
 .footer-field {
   grid-column: 2/3;
   grid-row: 2/3;

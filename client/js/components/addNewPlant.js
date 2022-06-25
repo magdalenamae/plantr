@@ -12,7 +12,7 @@ function addNewPlant() {
   heading.textContent = " Add New Plant";
   formEl.innerHTML = `
     <br>
-    <label for="name">Name</label>
+    <label for="name" id='name-to-search'>Search for your plant</label>
     <input type="text" name="name" id ='search-inp'>
     <button id ="add-pl-submit-btn" >Search</button>
     `;
@@ -73,6 +73,7 @@ function selectPlantsToAdd(plant) {
   description.textContent = plant.description;
   //plant img
   const image = document.createElement("img");
+  image.setAttribute("id", 'plant-image');
   image.src = plant.image;
   divEl.append(selectCheckBox, image, name, description);
   return divEl;
