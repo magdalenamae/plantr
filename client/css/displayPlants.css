@@ -94,3 +94,21 @@ section#plants-details > a {
     align-items: center;
     grid-row: 2;
 }
+
+.header-greenhouseh1{
+margin-left: 10px;
+display: grid;
+grid-column-start: 1;
+grid-row-start: 1;
+margin-left: 10px;
+display: grid;
+grid-column-start: 1;
+grid-column-end: 5;
+grid-row-start: 1;
+grid-row-end: 1;
+margin-bottom: 150px;
+justify-items: center;
+align-content: stretch;
+align-items: center;
+color: #7E8285;
+}

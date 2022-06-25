@@ -72,8 +72,9 @@
     color: black;
     justify-content: space-between;
     padding: 1px;
-    flex-direction: row;
+    flex-direction: row-reverse;
     flex-wrap: nowrap;
+
 }
 
 .weather-container {
@@ -86,11 +87,11 @@
     padding: 0px;
     margin-right: 25px;
     justify-items: center;
-    justify-content: space-between;
-    background-image: url(http://openweathermap.org/img/wn/04n@2x.png);
+    justify-content: space-around;
     opacity: 75%;
     flex-wrap: nowrap;
     padding: 1px;
+    align-items: center;
 }
 
 
