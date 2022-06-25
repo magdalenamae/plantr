@@ -1,12 +1,10 @@
-console.log("signup running");
-// fucntion to create the Sign Up form
 function renderSignUpForm() {
-  // getting body element from the html page
   const main = document.getElementById("sign-up-section");
   const page = document.getElementById("landing");
   page.innerHTML = "";
   const signUpDiv = document.createElement("div");
   signUpDiv.setAttribute("id", "signUpDiv");
+  //page copy
   const heading = document.createElement("h1");
   heading.textContent = "Get Started";
   heading.setAttribute("id", "signUpHeading");
@@ -14,6 +12,7 @@ function renderSignUpForm() {
   signUpMessage.setAttribute("id", "signUp-msg");
   signUpMessage.textContent = "Already have an account?";
   const loginMessage = document.createElement("span");
+  //switch to login page
   loginMessage.setAttribute("id", "switchLogin");
   loginMessage.textContent = "Log in";
   signUpMessage.append(loginMessage);
@@ -31,12 +30,10 @@ function renderSignUpForm() {
     <input type="text" name="email" placeholder="Email" autocomplete="off" />
     <br>
     <input type="password" name="password" placeholder="Password" autocomplete="off" />
-
     <br>
     <br>
     <br>
     <button id="sign-up">Sign Up</button>
-
     `;
   main.innerHTML = "";
   main.append(signUpDiv);
@@ -52,8 +49,7 @@ function renderSignUpForm() {
       password: newFormData.get("password"),
     };
 
-    // sending form data to server/ database
-
+    // sending data to server/database
     axios.post("/api/users", data).then((response) => {
       main.innerHTML = "";
       renderLogin();
