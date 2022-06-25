@@ -1,4 +1,7 @@
 // const res = require("express/lib/response");
+
+const res = require("express/lib/response");
+
 //greenhouse
 function displayPlantsList() {
   console.log("in display plant list");
@@ -28,8 +31,10 @@ function displayPlantsList() {
       console.log(greenhouseurl);
       const response2 = await axios(greenhouseurl);
       console.log("response2 data", response2);
-
-      heading.textContent = `hello ${response.data.name},this is your greenhouse`;
+      // let username = response.data.name;
+      // let uDusername = username.toString
+      // let uname = uDusername.toUppercase();
+      heading.textContent = `Hello ${response.data.name}, this is your greenhouse`;
       const listElements = response2.data.map((plant) => displayPlant(plant, response.data.id));
       console.log(listElements);
       section.replaceChildren(heading, ...listElements);
