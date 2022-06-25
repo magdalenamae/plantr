@@ -48,6 +48,12 @@ function addNewPlant() {
           showPlant.replaceChildren(addPlantsToGreenHouseButton, ...listElements);
         } else {
           showPlant.textContent = "No plants to display";
+          const manualAdd = document.createElement("p");
+          manualAdd.textContent = "Add your own manually?";
+          showPlant.appendChild(manualAdd);
+          manualAdd.addEventListener("click", (event) => {
+            renderManualAdd();
+          });
         }
       });
   });

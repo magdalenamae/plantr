@@ -23,13 +23,32 @@ router.get("/:name", (req, res) => {
   const sql = `SELECT * FROM plants where name  ILIKE ANY($1)`;
   db.query(sql, [newArray])
     .then((dbResult) => {
-      console.log(dbResult.rows, "searchplants ");
-
       res.json(dbResult.rows);
     })
     .catch((error) => {
       res.status(500).json({ success: false, message: "No plants to display" });
     });
+});
+
+//add into plants
+router.post("/", (req, res) => {
+  let name = req.body.name;
+  let image = req.body.image;
+  let description = req.body.description;
+
+  if (name === undefined || name === "") {
+    res.status(400).json({ success: false, message: "name is required" });
+  } else {
+    const sql = `INSERT INTO plants (name, image, description) VALUES ($1, $2, $3)`;
+
+    db.query(sql, [name, image, description])
+      .then((dbRes) => {
+        res.json({ success: true });
+      })
+      .catch((reason) => {
+        res.status(500).json({ message: reason });
+      });
+  }
 });
 
 module.exports = router;
