@@ -6,13 +6,11 @@ const bcrypt = require("bcrypt");
 router.get("/", (req, res) => {
   const sql = "SELECT * FROM users";
   db.query(sql).then((dbResult) => {
-    // console.log(dbResult.rows);
     res.json(dbResult.rows);
   });
 });
 
 router.post("/", (req, res) => {
-  console.log(req.body);
   let name = req.body.name;
   let email = req.body.email;
   let password = req.body.password;
@@ -21,7 +19,6 @@ router.post("/", (req, res) => {
     return bcrypt.hashSync(pass, bcrypt.genSaltSync(10), null);
   }
   let passwordHash = generateHash(password);
-  console.log(passwordHash);
 
   if (name === undefined || name === "") {
     res.status(400).json({ success: false, message: "name is required" });
@@ -41,7 +38,6 @@ router.post("/", (req, res) => {
         res.json({ success: true });
       })
       .catch((reason) => {
-        console.log(reason)
         res.status(500).json({ message: reason });
       });
   }

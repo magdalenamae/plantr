@@ -1,5 +1,5 @@
 body {
-  background-color:#D1D9DD;
+  background-color: #d1d9dd;
   padding: 0%;
   margin: 0%;
   font-family: Inter, Calibri, "Trebuchet MS", sans-serif;
@@ -11,29 +11,34 @@ body {
   padding: 0;
   width: 100%;
 }
+
 .account-bar {
   display: grid;
   margin: 0;
   padding: 0;
   grid-template-columns: 75px 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  background-color: #D1D9DD;
+  background-color: #d1d9dd;
 }
+
 .page-title {
   display: grid;
   width: 75%;
   grid-column: 2;
   grid-row: 2;
 }
+
 #container-img {
   display: grid;
   place-items: center;
   padding: 10px;
 }
+
 #landing-logo {
   width: 10%;
   padding: 10px;
 }
+
 #greeting {
   font-size: 32px;
   display: grid;
@@ -53,7 +58,7 @@ body {
 }
 
 #signup-link {
-  background-color: #7E8285;
+  background-color: #7e8285;
   border-radius: 7px;
   display: grid;
   grid-column: 2;
@@ -66,7 +71,7 @@ body {
 
 #login-link {
   color: white;
-  background-color:#7E8285;
+  background-color: #7e8285;
   border-radius: 7px;
   display: grid;
   grid-column: 1;
@@ -75,11 +80,25 @@ body {
   justify-content: center;
   width: 90px;
 }
-input:-webkit-autofill{
-  -webkit-text-fill-color: #7E8285 !important;
-}
 
 header {
   display: grid;
 }
 
+input:-webkit-autofill {
+  -webkit-text-fill-color: #7e8285 !important;
+}
+
+#made-by {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: 75px 2fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.footer-field {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  font-size: x-small;
+}

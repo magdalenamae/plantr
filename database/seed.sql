@@ -28,9 +28,6 @@ INSERT INTO plants(name, image, description) VALUES ('Spider Plant', './images/s
 INSERT INTO plants(name, image, description) VALUES ('Snakeplant', './images/snake.png', 'Dracaena trifasciata, or snake plant, is an evergreen ornamental houseplant with long sword-like variegated green and yellow leaves. The Dracaena trifasciata is extremely easy to grow at home and requires little care. In fact, the snake plant is so hardy that it almost thrives on neglect.');
 INSERT INTO plants(name, image, description) VALUES ('Oxalis triangularis', './images/oxalis.png', 'Oxalis triangularis - Purple Shamrock. Purple Shamrock is beautiful plant found in Brazil. It is a low growing clump-forming herbaceous plant that reaches a height of 7-10 inches with a spread of 10-15 inches. Leaves are purple, trifoliate with leaflets shaped like inverted triangles.');
 INSERT INTO plants(name, image, description) VALUES ('Cereus Repandus', './images/cereus.png', 'Cereus  repandus is commonly known by the names Peruvian Apple Cactus and Queen Of The Night, amongst others. This succulent plant is a large, columnar, thorny cactus, with cylindrical grey-green to blue stems that can grow up to 10m in height. The showy, white, nocturnal flowers remain open for only one night.');
-
-
-
 -- GREENHOUSE
 INSERT INTO greenhouse (name, plant_id, user_id) VALUES ('Allan', 5, 3);
 INSERT INTO greenhouse (name, plant_id, user_id) VALUES ('Allan', 5, 3);

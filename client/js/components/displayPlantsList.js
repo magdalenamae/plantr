@@ -1,63 +1,41 @@
-// const res = require("express/lib/response");
-
-const res = require("express/lib/response");
-
-//greenhouse
 function displayPlantsList() {
-  console.log("in display plant list");
   const section = document.getElementById("plants-details");
-  console.log("in display plants");
   const div = document.getElementById("care-details");
   div.innerHTML = "";
   //
   const loadingTag = document.createElement("p");
   loadingTag.textContent = "loading";
-  //
-  // const userid = 4;
   section.replaceChildren(loadingTag);
   //
   const heading = document.createElement("h1");
-  heading.classList.add("header-h1");
-  // heading.textContent = "Green House";
+  heading.classList.add("header-greenhouseh1");
 
-  //********************* CODE FOr async wait ti get data grom green house for the logged in user*/
-
+  //async
   sessionurl = "/api/session";
   const getUserid = async (sessionurl) => {
     try {
       const response = await axios(sessionurl);
-      console.log("response.data", response.data);
       greenhouseurl = `/api/greenHouse/${response.data.id}`;
-      console.log(greenhouseurl);
       const response2 = await axios(greenhouseurl);
-      console.log("response2 data", response2);
-      // let username = response.data.name;
-      // let uDusername = username.toString
-      // let uname = uDusername.toUppercase();
-      heading.textContent = `Hello ${response.data.name}, this is your greenhouse`;
+      heading.textContent = `Take a walk through your greenhouse, ${response.data.name}`;
       const listElements = response2.data.map((plant) => displayPlant(plant, response.data.id));
-      console.log(listElements);
       section.replaceChildren(heading, ...listElements);
     } catch (error) {
-      console.log(error);
-      console.log(error.response);
       const errormsg = document.createElement("p");
       errormsg.textContent = "You dont have any plants to display. Please add some plants.";
       section.replaceChildren(errormsg);
     }
   };
-
   getUserid(sessionurl);
 }
+
 function displayPlant(plant, userid) {
   console.log('userid', userid);
   const divEl = document.createElement("div");
-  console.log(divEl);
   divEl.classList.add("plant");
   divEl.setAttribute("id", plant.id);
   divEl.setAttribute("data-greenhouseid", plant.greenhouseid);
   //
-
   const name = document.createElement("h2");
   name.textContent = plant.name;
   //
@@ -81,29 +59,17 @@ function displayPlant(plant, userid) {
     event.preventDefault();
     const ghID = document.getElementById(plant.id);
     const greenhouseID = ghID.dataset.greenhouseid;
-    console.log(greenhouseID);
     axios.delete(`/api/greenhouse/${greenhouseID}`).then((response) => {
-      console.log("deleted ", response);
       displayPlantsList();
     });
   });
   //
   divEl.append(image, name, description, linkViewMore, deletePlantButton);
   linkViewMore.addEventListener("click", showPlantsDetails);
-  //   deletePlantButton.addEventListener("click", deletePlant);
   return divEl;
 }
 
 function showPlantCareDetails() {
   let showCareDetails = document.createElement("linkViewMore");
-  console.log("hello world, this is the showPlantCareDetails function");
-  showCareDetails.addEventListener("click", (event) => {
-    // axios event to get care details that match the plant id
-    // render the care details with the plant name and description and image
-    //add catch details to the axios event
-  });
+  showCareDetails.addEventListener("click", (event) => {});
 }
-
-plantcareDetails();
-
-// plantcareDetails();

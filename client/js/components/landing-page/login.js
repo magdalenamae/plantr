@@ -1,5 +1,3 @@
-console.log("login running");
-
 function renderLogin() {
   const main = document.getElementById("landing");
 
@@ -7,13 +5,14 @@ function renderLogin() {
   logInDiv.classList.add("login-div");
   let logInContentDiv = document.createElement("div");
   logInContentDiv.classList.add("login-content-div");
+  //greeting
   const heading = document.createElement("h1");
   heading.classList.add("login-heading");
   heading.textContent = "Welcome back";
-  const form = document.createElement("form");
   const message = document.createElement("p");
   message.classList.add("login-message");
   message.textContent = "Dont have an account?";
+  //switch to signup
   const signupMessage = document.createElement("span");
   signupMessage.setAttribute("id", "switchSignup");
   signupMessage.textContent = "Sign up";
@@ -24,6 +23,7 @@ function renderLogin() {
     renderSignUpForm();
   });
   //form element
+  const form = document.createElement("form");
   form.setAttribute("id", "login-form");
   form.innerHTML = `
     <input type="text" id='email' name="email" placeholder="Email" autocomplete="off" />
@@ -53,15 +53,3 @@ function renderLogin() {
       .catch((err) => (document.getElementById("errors").innerHTML = err.response.data.message));
   });
 }
-
-// const logInBtn = document.getElementById('login-btn');
-
-// logInBtn.addEventListener('click', function onClick(event) {
-//   const input = document.getElementById('email');
-//   const inputTwo = document.getElementById('password');
-//   let color = '#7E8285';
-//   input.style.backgroundColor = color;
-//   inputTwo.style.backgroundColor = color;
-//   console.log('login button clicked');
-
-// });
