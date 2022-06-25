@@ -13,8 +13,17 @@ function renderLogin() {
   const form = document.createElement("form");
   const message = document.createElement("p");
   message.classList.add("login-message");
-  message.textContent = "Dont have an account? Sign up";
-
+  message.textContent = "Dont have an account?";
+  const signupMessage = document.createElement("span");
+  signupMessage.setAttribute("id", "switchSignup");
+  signupMessage.textContent = "Sign up";
+  message.append(signupMessage);
+  message.addEventListener("click", (event) => {
+    console.log("click");
+    main.innerHTML = "";
+    renderSignUpForm();
+  });
+  //form element
   form.setAttribute("id", "login-form");
   form.innerHTML = `
     <input type="text" id='email' name="email" placeholder="Email" autocomplete="off" />
@@ -25,9 +34,13 @@ function renderLogin() {
     <br>
     <button id="login-btn" name="login">Log in</button>
     `;
+
   form.setAttribute('autocomplete', 'off');
+
+
+
   logInDiv.append(logInContentDiv);
-  logInContentDiv.append(heading, message,form);
+  logInContentDiv.append(heading, message, form);
   main.replaceChildren(logInDiv);
 
   const logInForm = document.getElementById("login-form");
@@ -50,5 +63,5 @@ function renderLogin() {
 //   input.style.backgroundColor = color;
 //   inputTwo.style.backgroundColor = color;
 //   console.log('login button clicked');
- 
+
 // });
