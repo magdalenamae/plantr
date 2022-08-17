@@ -20,9 +20,9 @@ router.post("/", (req, res) => {
     }
 
     if (user && isValidPassword(password, user.password_hash)) {
-      req.session.userId = user.id; SameSite=None; Secure;
-      req.session.name = user.name; SameSite=None; Secure;
-      req.session.email = user.email; SameSite=None; Secure;
+      req.session.userId = user.id; 
+      req.session.name = user.name; 
+      req.session.email = user.email; 
       res.json({ message: "logged in successfully" });
       return;
     }

@@ -25,9 +25,13 @@ app.use(
       pool: db,
       createTableIfMissing: true,
     }),
-    secret: process.env.EXPRESS_SESSION_SECRET_KEY,
+    secret: 'secretidere',
+    saveUninitialized: false,
+    sameSite: 'none',
+    secure: true,
   })
 );
+
 
 //middleware
 app.use((req, res, next) => {

@@ -51,6 +51,8 @@ function renderSignUpForm() {
 
     // sending data to server/database
     axios.post("/api/users", data).then((response) => {
+      console.log(response ,'response')
+      console.log(data, 'data')
       main.innerHTML = "";
       renderLogin();
     });
