@@ -25,10 +25,7 @@ app.use(
       pool: db,
       createTableIfMissing: true,
     }),
-    secret: 'secretidere',
-    saveUninitialized: false,
-    sameSite: 'none',
-    secure: true,
+    secret: process.env.EXPRESS_SESSION_SECRET_KEY,
   })
 );
 

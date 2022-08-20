@@ -48,7 +48,7 @@ function renderSignUpForm() {
       email: newFormData.get("email"),
       password: newFormData.get("password"),
     };
-
+    console.log(data, "data");
     // sending data to server/database
     axios.post("/api/users", data).then((response) => {
       console.log(response ,'response')
