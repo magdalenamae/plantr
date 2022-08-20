@@ -26,9 +26,11 @@ app.use(
       createTableIfMissing: true,
     }),
     secret: 'some secret',
+    resave: false,
+    saveUninitialized: false,
+    
   })
 );
-
 
 //middleware
 app.use((req, res, next) => {

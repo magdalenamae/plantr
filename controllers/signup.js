@@ -14,9 +14,10 @@ router.post("/", (req, res) => {
   let name = req.body.name;
   let email = req.body.email;
   let password = req.body.password;
-  console.log(password, "password");
+ 
   function generateHash(pass) {
     return bcrypt.hashSync(pass, bcrypt.genSaltSync(10), null);
+    
   }
   let passwordHash = generateHash(password);
 
