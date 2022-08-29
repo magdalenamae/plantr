@@ -1,5 +1,5 @@
 # Plntr
-https://mysterious-plains-73351.herokuapp.com/show_rides
+https://plntr.herokuapp.com/
 
 ### Plantr is a plants care app providing care guide for you little buddies. This is a single page web application.
 Every Plant Persons assistant. A place to track your plants and acess their care needs and details. Originally designed to set reminders for watering and care matinence. This plant app will help you keep your plant buddies happy all year round. 
